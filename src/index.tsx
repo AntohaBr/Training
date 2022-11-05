@@ -1,0 +1,4910 @@
+// export const Wrapper  = () => {
+//     return <Component city={"minsk"}/>
+// }
+// type PropsType = {
+//     city: string
+// }
+// export const Component: React.FC<PropsType> = (props) => {
+//     return <div>hello</div>
+// }
+// //
+// // В коде в разных местах допущена одна и та же ошибка.
+// //
+// //     Какое слово должно быть написано вместо ошибочного?                 ОТВЕТ Component ?
+// ---------------------------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------------------------
+// import ReactDOM from 'react-dom'
+//
+// export const YoutubeVideo = () => {
+//     return <div>
+//         <VideoHeader />
+//         <VideoContent />
+//         <VideoStatistics />
+//     </div>
+// }
+// export const VideoHeader = () => {
+//     return <div>
+//         😀 Заголовок видео
+//     </div>
+// }
+// export const VideoContent = () => {
+//     return <div>
+//         📼 Контент видео
+//     </div>
+// }
+// export const VideoStatistics = () => {
+//     return <div>
+//         📊 Статистика лайков
+//     </div>
+// }
+//
+// ReactDOM.render(<div><YoutubeVideo/></div>,
+//     document.getElementById('root')
+// );
+
+// Что нужно написать вместо ххх, чтобы на экране увидеть:
+// 😀 Заголовок видео
+// 📼 Контент видео
+// 📊 Статистика лайков
+// ❗ Ответ дать минимально возможным объёмом кода                                ОТВЕТ: <YoutubeVideo/>
+// ---------------------------------------------------------------------------------------------------
+//
+// ---------------------------------------------------------------------------------------------------
+// type UserPropsType = {
+//     name: string
+//     description: string
+// }
+// export const User: React.FC<UserPropsType> = (props) => {
+//     return <div>
+//         <h1>Имя: {props.name}</h1>
+//         //<div>Описание: {props.description}</div>
+//     </div>
+// }
+
+// //Что нужно написать вместо ххх, что бы код работал?                        ОТВЕТ: props.description
+// --------------------------------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------------------------------
+// type PropsType = {
+//     city: string        // 'minsk'
+//     country: string     // 'belarus'
+//     coords?: string     // '53.917501,27.604851'
+// }
+//
+// export const Wrapper1 = () => {
+//     return
+//     <PropsComponent1 city={'minsk'}country={'belarus'}/>    // строка с ошибкой
+// }
+//
+// export const PropsComponent1: React.FC<PropsType> = (props) => {
+//     return <div>hello</div>
+// }
+// // // Что МИНИМАЛЬНО ДОСТАТОЧНО нужно дописать в строке 8 (cтрока с ошибкой), чтобы не было ошибки      ОТВЕТ: country={'belarus'}
+// ------------------------------------------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------------------
+// type PagePropsType = {
+//     age: number
+//     name: string
+//     avatarUrl: string
+// }
+// const Page: React.FC<PagePropsType> = (props) => {
+//     return <User a={props.age} n={props.name} />
+// }
+// type UserPropsType = {
+//     a: number
+//     n: string
+// }
+// export const User: React.FC<UserPropsType> = (props) => {
+//     return <div> name: {props.n}, age: {props.a}</div>
+// }
+//
+// // Что нужно написать вместо xxx и yyy?
+// // Ответ дайте через пробел, например: blabla onClick(props)           ОТВЕТ: props.age props.name
+// --------------------------------------------------------------------------------------------
+//
+
+// -----------------------------------------------------------------------------------------------
+// type NewsType = {
+//     title: string
+//     author: string
+// }
+// type ArticleType = {
+//     title: string
+//     date: string
+//     text: string
+// }
+// type PagePropsType = {
+//     news: NewsType[]
+//     mainArticle: ArticleType
+// }
+// export const Page: React.FC<PagePropsType> = (props) => {
+//     return <div>
+//         <article>
+//             <h1>Название: {props.mainArticle.title}</h1>
+//             <div>{props.mainArticle.date}</div>
+//             <div>{props.mainArticle.text}</div>
+//         </article>
+//         <aside>Articles:
+//             <ul>
+//                 {props.news.map(n => <li>{n.title}, {n.author}</li>)}
+//             </ul>
+//         </aside>
+//     </div>
+// }
+//
+// //
+// // Что нужно написать вместо XXX и YYY? Ответ дайте через пробел, например:
+// // car user                                                               ОТВЕТ: mainArticle mainArticle mainArticle
+// // ----------------------------------------------------------------------------------------------------
+
+// ----------------------------------------------------------------------------------------------------
+//
+// import ReactDOM from 'react-dom'
+//
+// type UserWalletType = {
+//     title: string
+//     amount: number
+// }
+// type UserWalletPropsType = {
+//     wallet: UserWalletType
+// }
+//
+// export const UserWallet: React.FC<UserWalletPropsType> = (props) => {
+//     return <div>title: {props.wallet.title}, amount: {props.wallet.amount}</div>
+// }
+//
+// export const UserMoney = () => {
+//     const wallets = [
+//         {title: 'bitcoin', amount: 1},
+//         {title: '$', amount: 100}
+//     ]
+//
+//     return <div>
+//         <UserWallet wallet={wallets[0]} />
+//         <UserWallet wallet={wallets[1]} />
+//     </div>
+// }
+//
+// ReactDOM.render(<UserMoney />,
+//     document.getElementById('root')
+// );
+// // Что нужно написать вместо xxx и yyy, чтобы компонент UserMoney отобразил информацию о двух кошельках (bitcoin и $)?
+// //
+// //     Ответ дайте через пробел, например: props.x wallets                Ответ: wallets[0] wallets[1]
+// // ----------------------------------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------------------------
+// import ReactDOM from 'react-dom'
+//
+// export const VideoHeader = (props: {videoName: string}) => {
+//     return <div>
+//         😀 {props.videoName}
+//     </div>
+// }
+// export const VideoContent = (props: {videoContent: string}) => {
+//     return <div>
+//         📼 <a href={props.videoContent}>{props.videoContent}</a>
+//     </div>
+// }
+// export const VideoDescription = (props: {videoDescription: string}) => {
+//     return <div>
+//         📑 {props.videoDescription}
+//     </div>
+// }
+//
+// export const YoutubeVideo = (props: any) => {
+//     return <div>
+//         <VideoHeader videoName={props.video.title} />
+//         <VideoContent videoContent={props.video.link} />
+//         <VideoDescription videoDescription={props.video.description} />
+//     </div>
+// }
+//
+// export const App = () => {
+//     const video = {
+//         title: 'Samurai way',
+//         link: 'https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8',
+//         description: 'Best free react-course'
+//     }
+//
+//     return <YoutubeVideo video={video} />
+// }
+//
+// ReactDOM.render(<App />,
+//     document.getElementById('root')
+// );
+
+// ОТВЕТ: videoName={props.video.title} videoContent={props.video.link} videoDescription={props.video.description}
+
+// // Что нужно написать вместо xxx yyy zzz, чтобы увидеть ожидаемый результат?
+// //     Ответ дайте через пробел, пример: a={12} ccc={video.id} d={'hello'}
+// -----------------------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------------------------------
+// import ReactDOM from 'react-dom'
+//
+// const CrazyButton = (props: any) => {
+//
+//     const style = {
+//         color: props.fontColor,
+//         backgroundColor: props.bgColor
+//     }
+//
+//     return <button style={style}>
+//         {props.title}
+//     </button>
+// }
+//
+// export const App = () => {
+//     return <div>
+//         <CrazyButton title={'delete'} fontColor={'white'} bgColor={'red'}/>
+//         <CrazyButton title={'add'} fontColor={'white'} bgColor={'green'}/>
+//     </div>
+// }
+//
+// ReactDOM.render(<App/>,
+//     document.getElementById('root')
+// )
+// // Что нужно написать вместо XXX YYY ZZZ? Ответ дайте через пробел.                ОТВЕТ: fontColor bgColor title
+// ----------------------------------------------------------------------------------------------------
+//
+// -------------------------------------------------------------------------------------------------------
+// import ReactDOM from 'react-dom'
+//
+// const Son = (props: any) => {
+//     return <div>
+//         I am son. My name is {props.name}
+//     </div>
+// }
+//
+// const Father = (props: any) => {
+//     return <div>
+//         I am father. My name is {props.name}
+//         <Son name={props.sonName} />
+//     </div>
+// }
+//
+// const Granny = (props: any) => {
+//     return <div>
+//         I am granny. My name is {props.name}
+//         <Father name={props.fatherName} sonName={props.sonName} />
+//     </div>
+// }
+//
+// export const App = () => {
+//     return <div>
+//         <Granny name={'Бабуля'} fatherName={'Батя'} sonName={'Сын'}/>
+//     </div>
+// }
+//
+// ReactDOM.render(<App/>,
+//     document.getElementById('root')
+// )
+//
+// // Что нужно написать вместо XXX YYY ZZZ? Ответ дайте через пробел              ОТВЕТ: name fatherName sonName
+// -----------------------------------------------------------------------------------------------------------
+
+// ЭКЗАМЕН ПОМЕНЕДЕЛЬНИК 2
+
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function UsersList() {
+//     const results = useState<Array<string>>(["Bob", "Alex", "Ann"])
+//     const users = results[0]
+//     const setUsers = results[1]
+//
+//     return (
+//         <p>Тут будет список пользователей</p>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// // Какой тип правильнее указать вместо "any" при типизации стэйта?               ОТВЕТ: Array<string>
+
+
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function UsersList() {
+//     const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+// console.log(typeof useState)
+//     return (
+//         <p>Тут будет список пользователей!</p>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList />, document.getElementById('root')
+// );
+
+// // Что вернёт выражение: typeof useState?                                       ОТВЕТ: function
+//
+//
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function UsersList() {
+//     const results = useState<Array<string>>(["Bob", "Alex", "Ann"])
+//
+//     const users = results[0]
+//     const setUsers = results[1]
+//     return (
+//         <p>Тут будет список пользователей</p>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+
+// // Чему равно results.length?                                                  ОТВЕТ:   2
+//
+//
+//
+
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function UsersList() {
+//     const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+//     console.log(Array.isArray(users))
+//     return (
+//         <p>Тут будет список пользователей</p>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// // Что вернёт выражение: Array.isArray(users)?                                  ОТВЕТ: true
+//
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function UsersList() {
+//     const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+//     console.log(typeof setUsers)
+//     return (
+//         <p>Тут будет список пользователей</p>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+//  );
+// // Что вернёт выражение: typeof setUsers?                                       ОТВЕТ: function
+//
+//
+//
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function UsersList() {
+//     const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+//
+//     return (
+//         <main>
+//             <h4>User list:</h4>
+//             <ul>
+//                 { users.ХХХ(user => <li>{user}</li> )}
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// // Что надо вставить вместо ХХХ, чтобы код заработал?                             ОТВЕТ:  map
+//
+
+
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function UsersList() {
+//     const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+//     const getUser = (user: string) => <li>{user}</li>
+//     const usersList = users.map(getUser)
+//
+//     return (
+//         <main>
+//             <h4>User list:</h4>
+//             <ul>
+//                 {usersList}
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// //
+// // Что надо вставить вместо XXX, чтобы код заработал?                               ОТВЕТ: getUser
+// // ❗ Ответ дать минимально возможным объёмом кода
+//
+
+
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function UsersList() {
+//     const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+//     const getUser = (user: string) => <li>{user}</li>
+//     const usersList = users.map(getUser)
+// console.log(Array.isArray(usersList))
+//     return (
+//         <main>
+//             <h4>User list:</h4>
+//             <ul>
+//                 {usersList}
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// // Что вернёт выражение: Array.isArray(usersList)?                   ОТВЕТ: true
+//
+//
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function UsersList() {
+//     const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+//     const getUser = (user: string) => <li>{user}</li>
+// console.log(typeof getUser)
+//     return (
+//         <main>
+//             <h4>User list:</h4>
+//             <ul>
+//                 {users.map(getUser)}
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// // Что вернёт выражение: typeof getUser?                            ОТВЕТ: function
+//
+//
+
+
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// function User(props: UserType) {
+//     return (
+//         <li>User {props.name}: {props.age} y.o.</li>
+//     )
+// }
+//
+// function UsersList() {
+//     const state = [
+//         {id: 1, name: "Bob", age: 34},
+//         {id: 2, name: "Alex", age: 25},
+//         {id: 3, name: "Ann", age: 30},
+//         {id: 4, name: "John", age: 23},
+//     ]
+//     const users = [
+//         {id: 1, userName: "Bob", age: 34},
+//         {id: 2, userName: "Alex", age: 25},
+//         {id: 3, userName: "Ann", age: 30},
+//         {id: 4, userName: "John", age: 23},
+//     ]
+//
+//     const [usersList, setUsersList] = useState<Array<UserType>>([])
+//     return (
+//         <main>
+//             <h5>User list:</h5>
+//             <p>Тут будет список пользователей</p>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// // Что надо написать вместо XXX, чтобы код работал?
+// // ❗ Ответ дать минимально возможным объёмом кода                       ОТВЕТ:[]
+
+
+// -----------------------------------------------------------------------------------------------------------
+
+//                                               ЭКЗАМЕН ПОМЕНЕДЕЛЬНИК 3
+
+
+// Что надо написать вместо xxx, чтобы код работал оптимальней?
+// import React, {useState} from 'react';
+// // // // import ReactDOM from 'react-dom';
+// // // // import './index.css';
+// // // //
+// // // // type UserType = {
+// // // //     id: number
+// // // //     name: string
+// // // //     age: number
+// // // // }
+// // // //
+// // // // function User(props: UserType) {
+// // // //     return (
+// // // //         <li>Student {props.name}: {props.age} y.o.</li>
+// // // //     )
+// // // // }
+// // // //
+// // // // function UsersList() {
+// // // //     const data: Array<UserType> = [
+// // // //         {id: 1, name: "Bob", age: 34},
+// // // //         {id: 2, name: "Alex", age: 29},
+// // // //         {id: 3, name: "Ann", age: 25},
+// // // //         {id: 4, name: "John", age: 36},
+// // // //     ]
+// // // //     const [users, setUsers] = useState<Array<UserType>>(data)
+// // // //     return (
+// // // //         <main>
+// // // //             <h4>User list:</h4>
+// // // //             <ul>
+// // // //                 {
+// // // //                     users.map(u => <User key={u.id}
+// // // //                                          id={u.id}
+// // // //                                          name={u.name}
+// // // //                                          age={u.age}
+// // // //                         />
+// // // //                     )
+// // // //                 }
+// // // //             </ul>
+// // // //         </main>
+// // // //     )
+// // // // }
+// // // //
+// // // // ReactDOM.render(
+// // // //     <UsersList/>, document.getElementById('root')
+// // // // );
+// // // //
+// // // //                                                                          ОТВЕТ key
+
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// function User(props: UserType) {
+//     return (
+//         <li>Student {props.name}: {props.age} y.o.</li>
+//     )
+// }
+//
+// function UsersList() {
+//     const data: Array<UserType> = [
+//         {id: 1, name: "Bob", age: 34},
+//         {id: 2, name: "Alex", age: 29},
+//         {id: 3, name: "Ann", age: 25},
+//         {id: 4, name: "John", age: 36},
+//     ]
+//     const [users, setUsers] = useState<Array<UserType>>(data)
+//     return (
+//         <main>
+//             <h4>User list:</h4>
+//             <ul>
+//                 { users.map(u => <User key={u.id} {...xxxxx} />) }
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// Что надо написать вместо xxx, чтобы код работал?                                       ОТВЕТ:
+
+
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// function User(props: UserType) {
+//     return (
+//         <li>User {props.name}: {props.age} y.o.</li>
+//     )
+// }
+//
+// function UsersList() {
+//     const data: Array<UserType> = [
+//         {id: 1, name: "Bob", age: 25},
+//         {id: 2, name: "Alex", age: 28},
+//         {id: 3, name: "Ann", age: 23},
+//         {id: 4, name: "John", age: 30},
+//     ]
+//     const [users, setUsers] = useState<Array<UserType>>(data)
+//     // Пользователи старше 25 лет:
+//     // const olderThen25Users = users.xxx(u => u.age > 25)
+//     return (
+//         <main>
+//             <h4>User list:</h4>
+//             <ul>
+//                 { olderThen25Users.map(u => <User key={u.id} {...u}/>)}
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// Что надо написать вместо xxx, чтобы код работал?                                ОТВЕТ:  filter
+
+
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// function User(props: UserType) {
+//     return (
+//         <li>User {props.name}: {props.age} y.o.</li>
+//     )
+// }
+//
+// function UsersList() {
+//     const data: Array<UserType> = [
+//         {id: 1, name: "Bob", age: 25},
+//         {id: 2, name: "Alex", age: 28},
+//         {id: 3, name: "Ann", age: 23},
+//         {id: 4, name: "John", age: 30},
+//     ]
+//     const [users, setUsers] = useState<Array<UserType>>(data)
+//     // Необходимо отрендерить список пользователей старше 25 лет:
+//     const getOlderThen25Users = (u:UserType>) => u.age > 25
+//     // const olderThen25Users = users.filter(getOlderThen25Users)
+//     return (
+//         <main>
+//             <h4>User list:</h4>
+//             <ul>
+//                 { olderThen25Users.map(u => <User key={u.id} {...u}/>)}
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// Что надо написать вместо xxx, чтобы код работал?                          ОТВЕТ: UserType
+
+
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// function User(props: UserType) {
+//     return (
+//         <li>User {props.name}: {props.age} y.o.</li>
+//     )
+// }
+//
+// function UsersList() {
+//     const data: Array<UserType> = [
+//         {id: 1, name: "Bob", age: 25},
+//         {id: 2, name: "Alex", age: 28},
+//         {id: 3, name: "Ann", age: 23},
+//         {id: 4, name: "John", age: 30},
+//     ]
+//     const [users, setUsers] = useState<Array<UserType>>(data)
+//     // Необходимо отрендерить список ользователей старше 25 лет:
+//     const getOlderThen25Users = (u: UserType) => u.age > 25
+//     const olderThen25Users = users.filter(getOlderThen25Users)
+//     console.log(Array.isArray(olderThen25Users))
+//     return (
+//         <main>
+//             <h4>User list:</h4>
+//             <ul>
+//                 { olderThen25Users.map(u => <User key={u.id} {...u}/>)}
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// Что вернёт выражение: Array.isArray(olderThen25Users)                    ОТВЕТ:  true
+
+
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// type UserPropsType = UserType & {
+//     deleteUser: (id: number) => void
+// }
+//
+// function User(props: UserPropsType) {
+//     const deleteUser = () => props.deleteUser(props.id)
+//     return (
+//         <li>
+//             <button onClick={deleteUser}>x</button>
+//             User {props.name}: {props.age} y.o.
+//         </li>
+//     )
+// }
+//
+// function UsersList() {
+//     const data: Array<UserType> = [
+//         {id: 1, name: "Bob", age: 25},
+//         {id: 2, name: "Alex", age: 28},
+//         {id: 3, name: "Ann", age: 23},
+//         {id: 4, name: "John", age: 30},
+//     ]
+//     const [users, setUsers] = useState<Array<UserType>>(data)
+//     const deleteUser = (userID: number) => {
+//         const filteredUsers = users.filter(u => u.id !== userID)
+//         setUsers(xxx)
+//     }
+//     return (
+//         <main>
+//             <h4>User list:</h4>
+//             <ul>
+//                 {users.map(u => <User
+//                     key={u.id}
+//                     {...u}
+//                     deleteUser={deleteUser}
+//                 />)}
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// Что надо написать вместо xxx, чтобы код работал?                     ОТВЕТ: filteredUsers
+
+
+// import React, {MouseEventHandler} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function Button() {
+//     return <button onClick={()=>alert()}>Click</button>
+// }
+//
+//
+// ReactDOM.render(
+//     <Button/>, document.getElementById('root')
+// );
+
+// Что надо написать вместо ххх,
+// что бы на странице появился пустой alert при клике по кнопке?          ОТВЕТ: ()=>alert()
+
+// import React, {MouseEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function Button() {
+//     const onClickHandler = (e: MouseEvent<HTMLButtonElement>) => {
+//         console.log((typeof e) === MouseEvent<HTMLButtonElement>)
+//     }
+//     return <button onClick={onClickHandler} >Click</button>
+// }
+//
+//
+// ReactDOM.render(
+//     <Button/>, document.getElementById('root')
+// );
+
+// Какой тип данных представляет аргумент функции-обработчика?
+// Что надо написать вместо ххх, что бы в консоль вывело true?
+
+
+// import React, {useState, MouseEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function Button() {
+//     const [tagName, setTagName] = useState<string>()
+//     const onClickHandler = (e: MouseEvent<HTMLButtonElement>) => {
+//         setTagName(e.currentTarget.tagName)
+//     }
+//     return (
+//         <>
+//             <p>{tagName}</p>
+//             <button onClick={onClickHandler} >
+//                 <span>Click</span>
+//             </button>
+//         </>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <Button/>, document.getElementById('root')
+// );
+
+// Что надо написать вместо ххх, что бы на странице появился текст BUTTON?       ОТВЕТ: currentTarget
+
+
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// type UserPropsType = UserType & {
+//     deleteUser: (id: number) => void
+// }
+//
+// function User(props: UserPropsType) {
+//     return (
+//         <li>
+//             <button onClick={()=>props.deleteUser(props.id)}>x</button>
+//             User {props.name}: {props.age} y.o.
+//         </li>
+//     )
+// }
+//
+// function UsersList() {
+//     const data: Array<UserType> = [
+//         {id: 1, name: "Bob", age: 25},
+//         {id: 2, name: "Alex", age: 28},
+//         {id: 3, name: "Ann", age: 23},
+//         {id: 4, name: "John", age: 30},
+//     ]
+//     const [users, setUsers] = useState<Array<UserType>>(data)
+//     const deleteUser = (userID: number) => {
+//         setUsers(users.filter(u => u.id !== userID))
+//     }
+//     return (
+//         <main>
+//             <h4>Users list:</h4>
+//             <ul>
+//                 {users.map(u => <User
+//                     key={u.id}
+//                     {...u}
+//                     deleteUser={deleteUser}
+//                 />)}
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// В типе UserPropsType у функции deleteUser в параметрах указан тип "any".      ОТВЕТ: number
+// Какой тип было бы указать правильнее?
+
+
+// -----------------------------------------------------------------------------------------------------------
+
+//                                               ЭКЗАМЕН ПОМЕНЕДЕЛЬНИК 4
+
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// type UserPropsType = UserType & {
+//     deleteUser: (id: number) => void
+// }
+//
+// function User(props: UserPropsType) {
+//     return (
+//         <li>
+//             <button onClick={() => props.deleteUser(props.id)}>x</button>
+//             User {props.name}: {props.age} y.o.
+//         </li>
+//     )
+// }
+
+/*function UsersList() {
+    const data: Array<UserType> = [
+        {id: 1, name: "Bob", age: 25},
+        {id: 2, name: "Alex", age: 28},
+        {id: 3, name: "Ann", age: 23},
+        {id: 4, name: "John", age: 30},
+    ]
+    const [users, setUsers] = useState<Array<UserType>>(data)
+    const deleteUser = (userID: number) => {
+        const filteredUsers = users.filter(u => u.id !== userID)
+        setUsers(filteredUsers)
+    }
+    return (
+        <main>
+            <h4>User list:</h4>
+            <ul>
+                {users.map(u => <User
+                    key={u.id}
+                    {...u}
+                    deleteUser={deleteUser}
+                />)}
+            </ul>
+        </main>
+    )
+}
+
+ReactDOM.render(
+    <UsersList/>, document.getElementById('root')
+);*/
+// Что надо написать вместо xxx, чтобы код работал?                     ОТВЕТ: props.id
+
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// type UserPropsType = UserType & {
+//     deleteUser: (id: number) => void
+// }
+//
+// function User(props: UserPropsType) {
+//     const deleteUser = () => props.deleteUser(props.id)
+//     return (
+//         <li>
+//             <button onClick={deleteUser}>Delete</button>
+//             User {props.name}: {props.age} y.o.
+//         </li>
+//     )
+// }
+//
+// function UsersList() {
+//     const data: Array<UserType> = [
+//         {id: 1, name: "Bob", age: 25},
+//         {id: 2, name: "Alex", age: 28},
+//         {id: 3, name: "Ann", age: 23},
+//         {id: 4, name: "John", age: 30},
+//     ]
+//     const [users, setUsers] = useState<Array<UserType>>(data)
+//     const deleteUser = (userID: number) => {
+//         const updatedUsers = users.filter(u => u.id !== userID)
+//         setUsers(updatedUsers)
+//     }
+//     return (
+//         <main>
+//             <h4>User list:</h4>
+//             <ul>
+//                 {users.map(u => <User
+//                     key={u.id}
+//                     {...u}
+//                     deleteUser={deleteUser}    //xxx
+//                 />)}
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+
+// Что надо написать вместо xxx, чтобы код работал?                            ОТВЕТ: deleteUser
+
+
+//
+// import React, {useState, MouseEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function Post() {
+//     const onClickHandler = (e: MouseEvent<HTMLAnchorElement>) => {
+//         e.preventDefault()   // xxx
+//         alert("Летим-бомбим!!!")
+//     }
+//     return (
+//         <div>
+//             <article>
+//                 <h4>Как дела, братан?</h4>
+//                 <p>
+//                     Вижу, что неплохо. Давай, трудись )))
+//                     Google ждёт тебя в цифровом рабстве!
+//                     Cтавь лайк и полетели!!!
+//                 </p>
+//                 <a href={"https://www.youtube.com/"}
+//                    onClick={onClickHandler}
+//                 >В этом месте подробнее...</a>
+//             </article>
+//         </div>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <Post/>, document.getElementById('root')
+// );
+// Что надо написать вместо ххх, чтобы Вас не направило на страницу Youtube
+// при клике по ссылке?                                                             ОТВЕТ: e.preventDefault()
+
+
+//
+// import React, {useState, MouseEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function AuthForm() {
+//     const onClickHandler = (e: MouseEvent<HTMLButtonElement>) => {
+//         e.preventDefault()   //xxx
+//         alert()
+//     }
+//     return (
+//         <form>
+//             <div>
+//                 <label style={{padding: "10px 0"}}>
+//                     Name:
+//                     <input type={"email"} name={"email"}/>
+//                 </label>
+//             </div>
+//             <div>
+//                 <label style={{padding: "10px 0"}}>
+//                     Password:
+//                     <input type={"password"} name={"password"}/>
+//                 </label>
+//             </div>
+//             <button
+//                 onClick={onClickHandler}
+//                 type={"submit"}>
+//                 Log in
+//             </button>
+//         </form>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <AuthForm/>, document.getElementById('root')
+// );
+// Что надо написать вместо ххх, чтобы данные из формы                          ОТВЕТ: e.preventDefault()
+// не отправлялись на сервер и страница не перезагружалась
+// при клике по кнопке?
+
+
+// import React, {useState, MouseEvent, ChangeEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function User() {
+//     const [userName, setUserName] = useState<string>("")
+//     const onChangeHandler = (e:ChangeEvent<HTMLInputElement> )=> setUserName(e.currentTarget.value)
+//     return (
+//         <div>
+//             <p>{userName}</p>
+//             <input
+//                 onChange={onChangeHandler}
+//             />
+//         </div>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <User/>, document.getElementById('root')
+// );
+// Что надо написать вместо ххх, чтобы правильно типизировать
+// параметр функции?                                                          ChangeEvent<HTMLInputElement>
+
+
+// import React, {useState, MouseEvent, ChangeEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function User() {
+//     const [userName, setUserName] = useState<string>("")
+//     return (
+//         <div>
+//             <p>{userName}</p>
+//             <input
+//                 value={userName}      // xxx
+//                 onChange={(e) => setUserName(e.currentTarget.value)}
+//             />
+//         </div>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <User/>, document.getElementById('root')
+// );
+// Что надо написать вместо ххх, чтобы инпут был контролируемым?             ОТВЕТ:value={userName}
+
+//
+// import React, {useState, MouseEvent, ChangeEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function User() {
+//     const [userName, setUserName] = useState<string>("")
+//     const [text, setText] = useState<string>("")
+//     const onChangeHandler = (e: ChangeEvent<HTMLInputElement> )=> setUserName(e.currentTarget.value)
+//     return (
+//         <div>
+//             <input
+//                 value={userName}
+//                 onChange={onChangeHandler}
+//                 onBlur={()=> {
+//                     setUserName("")
+//                     // xxx
+//                     setText(userName)
+//                 }}
+//             />
+//             <p>{text}</p>
+//         </div>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <User/>, document.getElementById('root')
+// );
+// Что надо написать вместо ххх,
+// чтобы после вывода текста в параграф содержимое формы ввода очищалось?    ОТВЕТ:  setUserName("")
+
+//
+// import React, {useState, MouseEvent, ChangeEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function Notes() {
+//     const [newNote, setNewNote] = useState<string>("")
+//     const [notes, setNotes] = useState<Array<string>>([])
+//     const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement> )=>
+//         setNewNote(e.currentTarget.value)
+//     const addNote = () => {
+//         setNotes([newNote, ...notes])
+//         setNewNote("")
+//     }
+//     return (
+//         <div>
+//             <textarea
+//                 value={newNote}
+//                 onChange={onChangeHandler}
+//                 xxx = {addNote}    // onClick не правильно
+//             />
+//             <h4>Notes:</h4>
+//             <div>
+//                 {notes.map((n,i )=> <p key={i}>{n}</p>)}
+//             </div>
+//         </div>
+//     )
+// }
+//
+//
+// ReactDOM.render(
+//     <Notes/>, document.getElementById('root')
+// );
+// Что надо написать вместо ххх,
+// чтобы при потере инпутом фокуса добавлялась заметка?               ОТВЕТ:
+
+
+//
+// import React, {useState, MouseEvent, ChangeEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function Notes() {
+//     const [newNote, setNewNote] = useState<string>("")
+//     const [notes, setNotes] = useState<Array<string>>([])
+//     const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement> )=>
+//         setNewNote(e.currentTarget.value)
+//     const addNote = () => {
+//         setNotes([newNote, ...notes])
+//         setNewNote("")
+//     }
+//     return (
+//         <div>
+//             <textarea
+//                 value={newNote}
+//                 onChange={onChangeHandler}
+//                 onBlur={addNote}
+//             />
+//             <div>
+//                 <button onClick={()=>setNotes([])}>Clear notes list</button>
+//             </div>
+//             <h4>Notes:</h4>
+//             <div>
+//                 {notes.map(n => <p>{n}</p>)}
+//             </div>
+//         </div>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <Notes/>, document.getElementById('root')
+// );
+// // Что надо написать вместо ххх,
+// чтобы при клике список заметок очищался?                ОТВЕТ: ()=>setNotes([])
+
+//-----------------------------------------------------------------------------------------------
+//                                                 ЭКЗАМЕН 5
+
+// type UserPropsType = {
+//     name: string
+//     description: string
+// }
+// export const User: React.FC<UserPropsType> = (props) => {
+//     return <div>
+//         <h1>Имя: {props.name}</h1>
+//         //<div>Описание: {props.description}</div>
+//     </div>
+// }
+
+//Что нужно написать вместо ххх, что бы код работал?`                ОТВЕТ:    props.description
+
+
+//
+// type PagePropsType = {
+//     age: number
+//     name: string
+//     avatarUrl: string
+// }
+// const Page: React.FC<PagePropsType> = (props) => {
+//     return <User a={props.age} n={props.name} />
+// }
+// type UserPropsType = {
+//     a: number
+//     n: string
+// }
+// export const User: React.FC<UserPropsType> = (props) => {
+//     return <div>name: {props.n}, age: {props.a}</div>
+// }
+
+// Что нужно написать вместо xxx и yyy?                                        props.age props.name
+// Ответ дайте через пробел, например: blabla onClick(props)
+
+//
+// type UserWalletType = {
+//     title: string
+//     amount: number
+// }
+// type UserWalletPropsType = {
+//     wallet: UserWalletType
+// }
+//
+// export const UserWallet: React.FC<UserWalletPropsType> = (props) => {
+//     return <div>title: {props.wallet.title}, amount: {props.wallet.amount}</div>
+// }
+//
+// export const UserMoney = () => {
+//     const wallets = [
+//         {title: 'bitcoin', amount: 1},
+//         {title: '$', amount: 100}
+//     ]
+//
+//     return <div>
+//         <UserWallet wallet={wallets[0]} />
+//         <UserWallet wallet={wallets[1]} />
+//     </div>
+// }
+
+
+// Что нужно написать вместо xxx и yyy, чтобы компонент UserMoney отобразил информацию о двух кошельках (bitcoin и $)?
+//
+//     Ответ дайте через пробел, например: props.x wallets                   ОТВЕТ: wallets[0] wallets[1]
+
+
+//
+// import ReactDOM from 'react-dom'
+//
+// const Son = (props: any) => {
+//     return <div>
+//         I am son. My name is {props.name}
+//     </div>
+// }
+//
+//
+// const Father = (props: any) => {
+//     return <div>
+//         I am father. My name is {props.name}
+//         <Son name={props.sonName} />
+//     </div>
+// }
+//
+// const Granny = (props: any) => {
+//     return <div>
+//         I am granny. My name is {props.name}
+//         <Father name={props.fatherName} sonName={props.sonName} />
+//     </div>
+// }
+//
+// export const App = () => {
+//     return <div>
+//         <Granny XXX={'Бабуля'} YYY={'Батя'} ZZZ={'Сын'}/>
+//     </div>
+// }
+//
+// ReactDOM.render(<App/>,
+//     document.getElementById('root')
+// )
+
+// Что нужно написать вместо XXX YYY ZZZ? Ответ дайте через пробел             ОТВЕТ: name fatherName sonName
+
+
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function UsersList() {
+//     const results = useState<Array<string>>(["Bob", "Alex", "Ann"])
+//     const users = results[0]
+//     const setUsers = results[1]
+// console.log(results.length)
+//     return (
+//         <p>Тут будет список пользователей</p>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+
+// Чему равно results.length?                                            2
+
+
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function UsersList() {
+//     const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+//     console.log(typeof setUsers)
+//     return (
+//         <p>Тут будет список пользователей</p>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// Что вернёт выражение: typeof setUsers?                                 ОТВЕТ: function
+
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// function User(props: UserType) {
+//     return (
+//         <li>User {props.name}: {props.age} y.o.</li>
+//     )
+// }
+//
+// function UsersList() {
+//     const state = [
+//         {id: 1, name: "Bob", age: 34},
+//         {id: 2, name: "Alex", age: 25},
+//         {id: 3, name: "Ann", age: 30},
+//         {id: 4, name: "John", age: 23},
+//     ]
+//     const users = [
+//         {id: 1, userName: "Bob", age: 34},
+//         {id: 2, userName: "Alex", age: 25},
+//         {id: 3, userName: "Ann", age: 30},
+//         {id: 4, userName: "John", age: 23},
+//     ]
+//
+//     const [usersList, setUsersList] = useState<Array<UserType>>([])
+//     return (
+//         <main>
+//             <h5>User list:</h5>
+//             <p>Тут будет список пользователей</p>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// Что надо написать вместо XXX, чтобы код работал?
+// ❗ Если мы отмапим массив, то должны увидеть данные пользователей
+// ❗ Ответ дать минимально возможным объёмом кода                                   ОТВЕТ: []
+
+
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// function User(props: UserType) {
+//     return (
+//         <li>User {props.name}: {props.age} y.o.</li>
+//     )
+// }
+//
+// function UsersList() {
+//     const data: Array<UserType> = [
+//         {id: 1, name: "Bob", age: 25},
+//         {id: 2, name: "Alex", age: 28},
+//         {id: 3, name: "Ann", age: 23},
+//         {id: 4, name: "John", age: 30},
+//     ]
+//     const [users, setUsers] = useState<Array<UserType>>(data)
+//     // Пользователи старше 25 лет:
+//     const olderThen25Users = users.filter(u => u.age > 25)
+//     return (
+//         <main>
+//             <h4>User list:</h4>
+//             <ul>
+//                 { olderThen25Users.map(u => <User key={u.id} {...u}/>)}
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// Что надо написать вместо xxx, чтобы код работал?                     filter
+
+
+//
+// import React, {MouseEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function Button() {
+//     const onClickHandler = (e: MouseEvent<HTMLButtonElement>) => {
+//         console.log((typeof e) === xxx)
+//     }
+//     return <button onClick={onClickHandler} >Click</button>
+// }
+//
+//
+// ReactDOM.render(
+//     <Button/>, document.getElementById('root')
+// );
+
+// Какой тип данных представляет аргумент функции-обработчика?
+// Что надо написать вместо ххх, что бы в консоль вывело true?
+
+
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// type UserPropsType = UserType & {
+//     deleteUser: (id: number) => void
+// }
+//
+// function User(props: UserPropsType) {
+//     return (
+//         <li>
+//             <button onClick={() => props.deleteUser(props.id)}>x</button>
+//             User {props.name}: {props.age} y.o.
+//         </li>
+//     )
+// }
+//
+// function UsersList() {
+//     const data: Array<UserType> = [
+//         {id: 1, name: "Bob", age: 25},
+//         {id: 2, name: "Alex", age: 28},
+//         {id: 3, name: "Ann", age: 23},
+//         {id: 4, name: "John", age: 30},
+//     ]
+//     const [users, setUsers] = useState<Array<UserType>>(data)
+//     const deleteUser = (userID: number) => {
+//         const filteredUsers = users.filter(u => u.id !== userID)
+//         setUsers(filteredUsers)
+//     }
+//     return (
+//         <main>
+//             <h4>User list:</h4>
+//             <ul>
+//                 {users.map(u => <User
+//                     key={u.id}
+//                     {...u}
+//                     deleteUser={deleteUser}
+//                 />)}
+//             </ul>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// Что надо написать вместо xxx, чтобы код работал?                        ОТВЕТ: props.id
+
+
+//
+// import React, {useState, MouseEvent, ChangeEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function User() {
+//     const [userName, setUserName] = useState<string>("")
+//     return (
+//         <div>
+//             <p>{userName}</p>
+//             <input
+//                 // xxx
+//                 onChange={(e) => setUserName(e.currentTarget.value)}
+//             />
+//         </div>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <User/>, document.getElementById('root')
+// );
+// Что надо написать вместо ххх, чтобы инпут был контролируемым?                value={userName}
+
+
+// import React, {useState, MouseEvent, ChangeEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function Notes() {
+//     const [newNote, setNewNote] = useState<string>("")
+//     const [notes, setNotes] = useState<Array<string>>([])
+//     const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement> )=>
+//         setNewNote(e.currentTarget.value)
+//     const addNote = () => {
+//         setNotes([newNote, ...notes])
+//         setNewNote("")
+//     }
+//     return (
+//         <div>
+//             <textarea
+//                 value={newNote}
+//                 onChange={onChangeHandler}
+//                 onBlur={addNote}
+//             />
+//             <div>
+//                 <button
+//                     onClick={xxxxx}
+//                 >Clear notes list</button>
+//             </div>
+//             <h4>Notes:</h4>
+//             <div>
+//                 {notes.map(n => <p>{n}</p>)}
+//             </div>
+//         </div>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <Notes/>, document.getElementById('root')
+// );
+// Что надо написать вместо ххх,
+// чтобы при клике список заметок очищался?
+
+// ----------------------------------------------------------------------------------------------------------
+//                                                ВТОРНИК
+//                                                ЭКЗАМЕН 1
+
+// import React, {useState, MouseEvent} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function ColorButton() {
+//     const [isColored, setIsColored] = useState<boolean>(false)
+//     return (
+//         <button
+//             style={{ backgroundColor: `${ isColored === true ? "red": ""}`}}
+//             onClick={()=>setIsColored(true)}
+//         >
+//             Меняю цвет по клику
+//         </button>
+//     )
+// }
+//
+//
+// ReactDOM.render(
+//     <ColorButton/>, document.getElementById('root')
+// );
+
+// Что надо написать вместо XXX, чтобы при клике кнопка становилась красной?             ОТВЕТ: isColored
+
+
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+// import {array, string} from "prop-types";
+//
+// function UsersList() {
+//     const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+//     const getUser = (user: string, i: number) => <li key={i}>{user}</li>
+//
+//     const usersList = (users.length === 0)
+//         ? <p>List is empty</p>
+//         :  <ul>
+//             { users.map(getUser)}
+//         </ul>
+//
+//     return (
+//         <main>
+//             <button onClick={()=>setUsers([])}>Clear list</button>
+//             <h4>User list:</h4>
+//             {usersList}
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// Что надо вставить вместо XXX, чтобы код корректно работал  со списком пользователей?       ОТВЕТ: users.length
+
+
+//
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function PasswordChecker() {
+//     const [password, setPassword] = useState<string>("")
+//     return (
+//         <main>
+//             <p>Your password must have more than 8 charters!</p>
+//             <input
+//                 placeholder={"Enter your password"}
+//                 value={password}
+//                 onChange={e => setPassword(e.currentTarget.value)}
+//                 type={"password"}
+//             />
+//             { password.length < 9 && <p style={{color: "red"}}>The password is too short!</p>}
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <PasswordChecker/>, document.getElementById('root')
+// );
+
+// Что надо вставить вместо XXX, чтобы код работал нормально?             ОТВЕТ: password.length
+
+
+// import React, { ChangeEvent, useState } from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function LongCommentChecker() {
+//     const minSizeComment = 5
+//     const [isCommentReady, setIsCommentReady] = useState<boolean>(false)
+//     const [comment, setComment] = useState<string>('')
+//
+//     const onClickSendComment = () => {
+//         if (comment.length > minSizeComment) {
+//             setComment('')
+//         }
+//     }
+//     const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+//         const newComment = e.currentTarget.value
+//         if (newComment.length > minSizeComment) {
+//             setIsCommentReady(true)
+//         } else {
+//             setIsCommentReady(false)
+//         }
+//         setComment(newComment)
+//     }
+//
+//     return (
+//         <main>
+//             <textarea
+//                 placeholder={'Your comment must have more than 5 charters'}
+//                 value={comment}
+//                 onChange={onChangeHandler}
+//             />
+//             <div>
+//                 <button
+//                     disabled={xxx}
+//                     onClick={onClickSendComment}>
+//                     Send comment
+//                 </button>
+//             </div>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(<LongCommentChecker/>, document.getElementById('root'));
+
+// Что нужно написать вместо XXX, чтобы кнопка отправки комментария отрабатывала верно:
+// первоначально кнопка должна быть в состоянии disable, а после успешного выполнения условия
+// (комментарий должен быть больше 5 символов) должна раздизаблиться.
+// ❗ Ответ необходимо дать на основании данных (переменных), которые уже есть в коде
+
+
+// import React, {ChangeEvent, useState} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// function Colorize() {
+//
+//     const [color, setColor] = useState<string>("black")
+//     const colors = ["red", "yellow", "green", "blue", "violet", "chartreuse"]
+//
+//     const styles = {
+//         width: "100px",
+//         height: "100px",
+//         borderRadius: "50%",
+//         backgroundColor: "black"
+//     }
+//
+//     const getColor = (colors: string[]) => {
+//         const nextColor = colors[Math.floor(Math.random() * colors.length)]
+//         return nextColor
+//     }
+//
+//     return (
+//         <main>
+//             <div style={{...styles, backgroundColor: color}}/>
+//             <div>
+//                 <button
+//                     onClick={() => setColor(getColor(colors))}
+//                 >
+//                     Get random color
+//                 </button>
+//             </div>
+//         </main>
+//     )
+// }
+//
+// ReactDOM.render(
+//     <Colorize/>, document.getElementById('root')
+// );
+// Что надо вставить вместо XXX, чтобы круг рандомно менял цвет по клику?        ОТВЕТ: getColor(colors)
+
+
+// import React, { ChangeEvent, useState } from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     personalData: PersonalDataType
+// }
+// type PersonalDataType = {
+//     gender: string
+//     age: number
+//     technologies: Array<TechnologiesType>
+// }
+// type TechnologiesType = 'HTML' | 'CSS' | 'React' | 'JS/TS' | 'Redux'
+//
+// function UsersList() {
+//
+//     const [users, setUsers] = useState<Array<UserType>>([
+//         {
+//             id: 1,
+//             name: 'Bob',
+//             personalData: {
+//                 gender: 'male',
+//                 age: 23,
+//                 technologies: ['HTML', 'CSS', 'React', 'JS/TS', 'Redux']
+//             }
+//         },
+//         {
+//             id: 2,
+//             name: 'Alex',
+//             personalData: {
+//                 gender: 'male',
+//                 age: 21,
+//                 technologies: ['HTML', 'CSS', 'React']
+//             }
+//         },
+//         {
+//             id: 3,
+//             name: 'Ann',
+//             personalData: {
+//                 gender: 'female',
+//                 age: 26,
+//                 technologies: ['HTML', 'CSS', 'JS/TS']
+//             }
+//         },
+//         {
+//             id: 4,
+//             name: 'Helen',
+//             personalData: {
+//                 gender: 'female',
+//                 age: 31,
+//                 technologies: ['HTML', 'CSS']
+//             }
+//         },
+//         {
+//             id: 5,
+//             name: 'Donald',
+//             personalData: {
+//                 gender: 'male',
+//                 age: 28,
+//                 technologies: ['React', 'JS/TS', 'Redux']
+//             }
+//         },
+//     ])
+//
+//
+//     return <ul>
+//         {users.map(u => {
+//             return (
+//                 u.personalData.technologies.length >= 5
+//                     ? <li key={u.id}>
+//                         {`User ${u.name}. ${u.personalData.age}. Ready to work.`}
+//                     </li>
+//                     : <li key={u.id}>
+//                         {`User ${u.name}. ${u.personalData.age}. `}
+//                     </li>)
+//         })}
+//     </ul>
+// }
+//
+// ReactDOM.render(
+//     <UsersList/>, document.getElementById('root')
+// );
+// Те пользователи, у которых в стэке пять и более технологий, должны в списке
+// быть отмечены, как готовые к работе.
+// Что надо вставить вместо XXX, чтобы код работал нормально?                        ОТВЕТ: personalData.technologies
+
+// ________________________________________________________________________________________________________________
+//                                               ВТОРНИК ЭКЗАМЕН 2
+
+
+//
+/*type Student = {
+    id: number
+    name: string
+}
+type Students = Array<Student>
+type Friends = {
+    [key: string]: Array<string>
+}
+
+export const students: Students = [
+    {id: 1, name: "Bob"},
+    {id: 2, name: "Alex"},
+    {id: 3, name: "Ann"},
+    {id: 4, name: "Charley"},
+]
+
+export const friends: Friends = {
+    1: ["Oliver", "Jack", "Oscar",],
+    2: ["Jack", "Lewis", "Thomas",],
+    3: ["William", "Michael", "Lewis",],
+    4: ["Oscar", "James", "William",],
+
+}*/
+//      console.log(Array.isArray(friends))
+//                                                                                      false
+
+//Дан список студентов и структура,
+//которая содержит список друзей каждого из студентов.
+//Id студента является ключом к массиву его друзей.
+//Что вернёт выражение: Array.isArray(friends)?
+//
+//
+//  type StudentType = {
+//     id: number
+//    name: string
+//      age: number
+//
+//  }
+//
+//  type FriendsType = {
+//      [key: string]: Array<string>
+//  }
+//
+//
+//  export const students: Array<StudentType> = [
+//      {id: 1, name: "Bob", age: 34},
+//      {id: 2, name: "Alex", age: 23},
+//      {id: 3, name: "Ann", age: 25},
+//      {id: 4, name: "Charley", age: 20},
+//  ]
+//
+//
+//  export const friends: FriendsType = {
+//      1: ["Jack","Oliver", "Oscar",],
+//      2: ["Jack", "Lewis", "Thomas",],
+//     3: ["William",  "Lewis","Michael"],
+//     4: ["Oscar", "Thomas", "William",],
+//  }
+//
+// console.log(friends[students[1].id])
+// console.log(friends[students[3].id])
+
+//                                                                                         "Thomas"
+// //Дан массив студентов и структура,
+// //которая содержит список друзей каждого из студентов.
+// //Id студента является ключом к массиву его друзей.
+// //Имеют ли студенты students[1] и students[3] общих друзей?
+// //Если да, напишите в ответе имя общего друга в кавычках, если нет - напишите в ответе false.
+//
+
+
+//
+// type StudentType = {
+//     id: number
+//     name: string
+// }
+//
+// type FriendsType = {
+//     [key: string]: Array<string>
+// }
+//
+// export const students: Array<StudentType> = [
+//     {id: 1, name: "Bob"},
+//     {id: 2, name: "Alex"},
+//     {id: 3, name: "Ann"},
+//     {id: 4, name: "Charley"},
+// ]
+//
+// export const friends: FriendsType = {
+//     1: ["Oliver", "Jack", "Oscar",],
+//     2: ["Jack", "Lewis", "Thomas",],
+//     3: ["William", "Michael", "Lewis",],
+//     4: ["Oscar", "James", "William",],
+// }
+// console.log(friends[3][1])                                                                               "Michael"
+//Дан список студентов и структура,
+//которая содержит список друзей каждого из студентов.
+//Id студента является ключом к массиву его друзей.
+//Какое значение лежит тут:  friends[3][1]?
+
+
+// type StudentType = {
+//     id: number
+//     name: string
+// }
+//
+// type FriendsType = {
+//     [key: string]: Array<string>
+// }
+//
+// export const students: Array<StudentType> = [
+//     {id: 1, name: "Bob"},
+//     {id: 2, name: "Alex"},
+//     {id: 3, name: "Ann"},
+//     {id: 4, name: "Charley"},
+// ]
+//
+// export const friends: FriendsType = {
+//     1: ["Oliver", "Jack", "Oscar",],
+//     2: ["Jack", "Lewis", "Thomas",],
+//     3: ["William", "Michael", "Lewis",],
+//     4: ["Oscar", "James", "William",],
+// }
+// //
+// console.log(friends[students[1].id][2])                                 //"Thomas"
+//
+//Дан список студентов и структура,
+//которая содержит список друзей каждого из студентов.
+//Id студента является ключом к массиву его друзей.
+//Какое значение лежит тут: friends[students[1].id][2]?
+
+
+//
+// type StudentType = {
+//     id: number
+//     name: string
+// }
+//
+// type FriendsType = {
+//     [key: string]: Array<String>
+// }
+//
+// export const students: Array<StudentType> = [
+//     {id: 1, name: "Bob"},
+//     {id: 2, name: "Alex"},
+//     {id: 3, name: "Ann"},
+//     {id: 4, name: "Charley"},
+// ]
+//
+// export const friends: FriendsType = {
+//     1: ["Oliver", "Jack", "Oscar",],
+//     2: ["Jack", "Lewis", "Thomas",],
+//     3: ["William", "Michael", "Lewis",],
+//     4: ["Oscar", "James", "William",],
+// }
+//  console.log(friends[students[0].id])                                          // ОТВЕТ: undefined
+
+//Дан список студентов и структура,
+//которая содержит список друзей каждого из студентов.
+//Id студента является ключом к массиву его друзей.
+//Какое значение лежит тут: friends[students[0].id][3]?
+
+
+// import React, {useState} from "react";
+//
+// type samuraiType = {
+//     id: string
+//     name: string
+//     status: "online" | "offline"
+// }
+// type CourseNameType = "HTML"|"JS"|"React"|"Redux"|"HomeWorks"
+// type CourseType = {
+//     name: CourseNameType
+//     mentor: string
+//     isDone: boolean
+// }
+// type TechnologiesType = {
+//     [userID: string]: Array<CourseType>
+// }
+//
+// const samuraiID_1 = "64jf-87kg"
+// const samuraiID_2 = "90lg-34ks"
+// const samuraiID_3 = "12jm-05fd"
+//
+// export const samurai: Array<samuraiType> = [
+//     {id: samuraiID_1, name: "Bob", status: "online"},
+//     {id: samuraiID_2, name: "Alex", status: "offline"},
+//     {id: samuraiID_3, name: "Ann", status: "offline"},
+// ]
+//
+// export const technologies: TechnologiesType = {
+//     [samuraiID_1]: [
+//         {name: "HTML", mentor: "Svetlana", isDone: true},
+//         {name: "JS", mentor: "Viktor", isDone: true},
+//         {name: "React", mentor: "Dmitrij", isDone: false},
+//         {name: "Redux", mentor: "Valera", isDone: false},
+//         {name: "HomeWorks", mentor: "Ignat", isDone: true},
+//     ],
+//     [samuraiID_2]: [
+//         {name: "HTML", mentor: "Svetlana", isDone: true},
+//         {name: "JS", mentor: "Viktor", isDone: true},
+//         {name: "React", mentor: "Dmitrij", isDone: true},
+//         {name: "Redux", mentor: "Valera", isDone: false},
+//         {name: "HomeWorks", mentor: "Ignat", isDone: true},
+//     ],
+//     [samuraiID_3]: [
+//         {name: "HTML", mentor: "Svetlana", isDone: true},
+//         {name: "JS", mentor: "Viktor", isDone: true},
+//         {name: "React", mentor: "Dmitrij", isDone: false},
+//         {name: "Redux", mentor: "Valera", isDone: false},
+//         {name: "HomeWorks", mentor: "Ignat", isDone: false},
+//     ],
+// }
+//
+// export const updateCourseStatus = (samuraiID: string, name: CourseNameType, isDone: boolean) => {
+//     return {...technologies,
+//         [samuraiID]: technologies[samuraiID].map(c => c.name === name ? {...c, isDone} : c)
+//     }
+// }                                                                                                  ОТВЕТ: samuraiID
+// Дан список самураев из инкубатора и структура, хранящая данные о курсах,
+// которые самурай уже прошёл, а так же о тех курсах, которые ему ещё предстоит пройти.
+// Так же дана функция updateCourseStatus,
+// которая позволяет отметить курс как пройденный самураем или снять такую отметку
+// Что надо написать вместо XXX, чтобы функция работала?
+
+
+// type StudentType = {
+//     id: number
+//     name: string
+// }
+// type Students = Array<StudentType>
+// type Friends = {
+//     [key: string]: Array<string>
+// }
+//
+// export const students: Students = [
+//     {id: 1, name: "Bob"},
+//     {id: 2, name: "Alex"},
+//     {id: 3, name: "Ann"},
+//     {id: 4, name: "Charley"},
+// ]
+//
+// export const friends: Friends = {
+//     1: ["Oliver", "Jack", "Oscar",],
+//     2: ["Jack", "Lewis", "Thomas",],
+//     3: ["William", "Michael", "Lewis",],
+//     4: ["Oscar", "James", "William",],
+// }
+//
+// console.log(Array.isArray(students))                                        ОТВЕТ:true
+
+// _________________________________________________________________________________________________________________
+//                                              ВТОРНИК ЭКЗАМЕН 3
+
+// type StudentType = {
+//     id: number
+//     name: string
+// }
+//
+// type FriendsType = {
+//     [key: string]: Array<string>
+// }
+//
+// export const students: Array<StudentType> = [
+//     {id: 1, name: "Bob"},
+//     {id: 2, name: "Alex"},
+//     {id: 3, name: "Ann"},
+//     {id: 4, name: "Charley"},
+// ]
+//
+// export const friends: FriendsType = {
+//     1: ["Oliver", "Jack", "Oscar",],
+//     2: ["Jack", "Lewis", "Thomas",],
+//     3: ["William", "Michael", "Lewis",],
+//     4: ["Oscar", "James", "William",],
+// }
+//
+// const getMutualFriends = (st_1: StudentType, st_2: StudentType,) => {
+//     const result: Array<string> = []
+//     friends[st_1.id].forEach(f => friends[st_2.id].includes(f)? result.push(f): null)
+//     return result
+// }
+
+//Дан массив студентов и структура,
+//которая содержит список друзей каждого из студентов.                                    ОТВЕТ:   st_2.id
+// Так же дана функция  getMutualFriends, проверяющая наличие общих друзей
+// у двух выбранных студентов.
+//Функция принимает параметром два объекта типа StudentType
+// и возвращает массив с именами общих друзей,
+//если они есть и пустой массив, если таковых нету.
+// Что надо написать вместо ххх, чтобы функция работала?
+
+
+//
+// import React, {useState} from "react";
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     status: "online" | "offline"
+// }
+//
+// type AddressType = {
+//     country: string
+//     city: string
+//     email: string
+// }
+//
+// type AdressesType = {
+//     [userID: string]: AddressType
+// }
+//
+//
+// const users: Array<UserType> = [
+//     {id: 1, name: "Bob", status: "online"},
+//     {id: 2, name: "Alex", status: "offline"},
+//     {id: 3, name: "Ann", status: "offline"},
+// ]
+//
+// export const addresses: AdressesType = {
+//     1: {country: "Russia", city: "Moscow", email: "hey@email.com"},
+//     2: {country: "Ukraine", city: "Kiev", email: "yo@send.ua"},
+//     3: {country: "Belarus", city: "Minsk", email: "wow@gogo.ru"},
+//
+// }
+//
+// export const changeUserStatus = (userID: number, status: string) => {
+//     return users.map(u => u.id === userID ? {...u, status} : u)
+// }
+// Дан список пользователей и структура, хранящая адреса пользователей.                   ОТВЕТ: map
+// Так же дана функция changeUserStatus, которая меняет статус пользователя.
+// Что надо написать вместо ххх, чтобы функция работала корректно?
+
+
+//
+// import React, {useState} from "react";
+//
+// type UserType = {
+//     id: number
+//     name: string
+//     status: "online" | "offline"
+// }
+//
+// type AddressType = {
+//     country: string
+//     city: string
+//     email: string
+// }
+//
+// type AdressesType = {
+//     [userID: string]: AddressType
+// }
+//
+// const users: Array<UserType> = [
+//     {id: 1, name: "Bob", status: "online"},
+//     {id: 2, name: "Alex", status: "offline"},
+//     {id: 3, name: "Ann", status: "offline"},
+// ]
+//
+// const addresses: AdressesType = {
+//     1: {country: "Russia", city: "Moscow", email: "hey@email.com"},
+//     2: {country: "Ukraine", city: "Kiev", email: "yo@send.ua"},
+//     3: {country: "Belarus", city: "Minsk", email: "wow@gogo.ru"},
+//
+// }
+//
+// const updateUserAddress = (userID: number, key: string, newValue: string) => {
+//     return {...addresses,
+//         [userID]: {...addresses[userID], [key]: newValue}
+//     }
+// }
+// Дан список пользователей и структура, хранящая адреса пользователей.                     ОТВЕТ: userID
+// Так же дана функция updateUserAddress,
+// которая обновляет указанное в параметрах поле в адресе пользователя.
+// Пример использования функции: updateUserAddress(2, "city", "Dnepropetrovsk")
+// Что надо написать вместо ххх, чтобы функция работала корректно?
+
+
+// import React, {useState} from "react";
+//
+// type samuraiType = {
+//     id: string
+//     name: string
+//     status: "online" | "offline"
+// }
+// type CourseNameType = "HTML"|"JS"|"React"|"Redux"|"HomeWorks"
+// type CourseType = {
+//     name: CourseNameType
+//     mentor: string
+//     isDone: boolean
+// }
+// type TechnologiesType = {
+//     [userID: string]: Array<CourseType>
+// }
+//
+// const samuraiID_1 = "64jf-87kg"
+// const samuraiID_2 = "90lg-34ks"
+// const samuraiID_3 = "12jm-05fd"
+//
+// export const samurai: Array<samuraiType> = [
+//     {id: samuraiID_1, name: "Bob", status: "online"},
+//     {id: samuraiID_2, name: "Alex", status: "offline"},
+//     {id: samuraiID_3, name: "Ann", status: "offline"},
+// ]
+//
+// export const technologies: TechnologiesType = {
+//     [samuraiID_1]: [
+//         {name: "HTML", mentor: "Svetlana", isDone: true},
+//         {name: "JS", mentor: "Viktor", isDone: true},
+//         {name: "React", mentor: "Dmitrij", isDone: false},
+//         {name: "Redux", mentor: "Valera", isDone: false},
+//         {name: "HomeWorks", mentor: "Ignat", isDone: true},
+//     ],
+//     [samuraiID_2]: [
+//         {name: "HTML", mentor: "Svetlana", isDone: true},
+//         {name: "JS", mentor: "Viktor", isDone: true},
+//         {name: "React", mentor: "Dmitrij", isDone: true},
+//         {name: "Redux", mentor: "Valera", isDone: false},
+//         {name: "HomeWorks", mentor: "Ignat", isDone: true},
+//     ],
+//     [samuraiID_3]: [
+//         {name: "HTML", mentor: "Svetlana", isDone: true},
+//         {name: "JS", mentor: "Viktor", isDone: true},
+//         {name: "React", mentor: "Dmitrij", isDone: false},
+//         {name: "Redux", mentor: "Valera", isDone: false},
+//         {name: "HomeWorks", mentor: "Ignat", isDone: false},
+//     ],
+// }
+//
+// export const updateCourseStatus = (samuraiID: string, name: CourseNameType, isDone: boolean) => {
+//     return {...technologies,
+//         [samuraiID]: technologies[samuraiID].map(c => c.name === name ? {...c, isDone} : c)
+//     }
+// }
+// Дан список самураев из инкубатора и структура, хранящая данные о курсах,                      ОТВЕТ:   samuraiID
+// которые самурай уже прошёл, а так же о тех курсах, которые ему ещё предстоит пройти.
+// Так же дана функция updateCourseStatus,
+// которая позволяет отметить курс как пройденный самураем или снять такую отметку
+// Что надо написать вместо ххх, чтобы функция работала корректно?
+
+// ____________________________________________________________________________________________________________
+//                                                 ВТОРНИК ЭКЗАМЕН 4
+
+
+//
+// type ActionType = {
+//     type: "SUM"|"SUB"|"MULT"|"DIV"
+//     payload: number
+// }
+//
+// export const calculator = (state: number, action: ActionType) => {
+//     switch (action.type) {
+//         case "SUM":
+//             return state + action.payload
+//         case "SUB":
+//             return state - action.payload
+//         case "DIV":
+//             return state / action.payload
+//         default:
+//             return state
+//     }
+// }
+//                                                                                          ОТВЕТ: action.type
+//Что надо написать вместо ХХХ, чтобы функция calculator работала?
+
+
+// type ActionType = {
+//     type: "SUM"|"SUB"|"MULT"|"DIV"
+//     payload: number
+// }
+//
+// export const calculator = (state: number, action: ActionType): number => {
+//     switch (action.type) {
+//         case "SUM":
+//             return state + action.payload
+//         case "SUB":
+//             return state - action.payload
+//         case "DIV":
+//             return state / action.payload
+//         default:
+//             return state
+//     }
+// }
+//                                                                                          ОТВЕТ: "MULT"
+//Обработка какого action.type не предусмотрена в функции calculator?
+
+
+//
+// type ActionType = {
+//     type: "SUM"|"SUB"|"MULT"|"DIV"
+//     payload: number
+// }
+//
+// export const calculator = (state: number, action: ActionType): number => {
+//     switch (action.type) {
+//         case "SUM":
+//             return state + action.payload
+//         case "SUB":
+//             return state - action.payload
+//         case "DIV":
+//             return state / action.payload
+//         case "MULT":
+//             return state * action.payload
+//         default:
+//             return state
+//     }
+// }
+//                                                                                             ОТВЕТ: type: "SUB"
+// const result = calculator(10, {type: "SUB", payload: 5})
+// console.log(result)
+//Что надо написать вместо XXX, что бы переменная result содержала значение 5?
+
+//
+// type ActionType = {
+//     type: "SUM"|"SUB"|"MULT"|"DIV"|"EXP"
+//     payload: number
+// }
+//
+// export const calculator = (state: number, action: ActionType): number => {
+//     switch (action.type) {
+//         case "SUM":
+//             return state + action.payload
+//         case "SUB":
+//             return state - action.payload
+//         case "DIV":
+//             return state / action.payload
+//         case "MULT":
+//             return state * action.payload
+//         case "EXP":
+//             return state ** action.payload
+//         default:
+//             return state
+//     }
+// }
+// const result = calculator(10, {type: "EXP", payload: 0})
+// if (!(result - 1)){
+//     console.log("IT-INCUBATOR")
+// }
+//                                                                                           ОТВЕТ: type: "EXP"
+//Что надо написать вместо XXX чтобы в консоли появилась строка "IT-INCUBATOR"?
+
+
+// type ActionType = {
+//     type: "SUM"|"SUB"|"MULT"|"DIV"|"EXP"
+//     payload: number
+// }
+//
+// export const calculator = (state: number, action: ActionType): number => {
+//     switch (action.type) {
+//         case "SUM":
+//             return state + action.payload
+//         case "SUB":
+//             return state - action.payload
+//         case "DIV":
+//             return state / action.payload
+//         case "EXP":
+//             return state ** action.payload
+//         default:
+//             return state
+//     }
+// }
+// console.log(calculator(10, {type: "MULT", payload: 2}))                                         ОТВЕТ: 10
+//Что вернёт такой вызов функции: calculator(10, {type: "MULT", payload: 2})?
+
+
+// type UserType = {
+//     id: number
+//     userName: string
+//     email: string
+//     password: string
+// }
+//
+// type ChangeUserPasswordTypeAT = {
+//     type: "CHANGE-USER-PASSWORD"
+//     payload: {
+//         id:number
+//         newPassword:string
+//     }
+// }
+//
+// export const userReducer =
+//     (state: UserType[], action: ChangeUserPasswordTypeAT): UserType[] => {
+//         switch (action.type) {
+//             case "CHANGE-USER-PASSWORD":
+//                 return state.map(u =>
+//                     u.id === action.payload.id
+//                         ? {...u, password: action.payload.newPassword}
+//                         : u)
+//             default:
+//                 return state
+//         }
+//     }
+//                                                                               ОТВЕТ:  id:number newPassword:string
+
+//Какой код должен быть написан вместо XXX и YYY в типе //ChangeUserPasswordTypeAT, что бы редьюсер работал?
+//В ответе напишите через пробел: XXX  YYY
+
+// _________________________________________________________________________________________________________________
+//                                             СРЕДА ЭКЗАМЕН 1
+
+/*
+type Status = 'Stopped' | 'Playing' | 'Paused'
+type StateType = {
+    volume: number // in percents
+    trackUrl: string // 'https://blabla.com/track01.mp3',
+    currentPlayPosition: number // milliseconds,
+    status: Status
+}
+
+export const playerReducer = (state: StateType, action: any) => {
+    switch (action.type) {
+        case XXX:
+            return {
+                ...state,
+                trackUrl: action.url
+            }
+        default:
+            return state
+    }
+}
+                                                                                          ОТВЕТ: 'TRACK-URL-CHANGED'
+const muteTrackAC = () => ({type: 'TRACK-MUTED'})
+const changeTrackAC = (url: string) => ({type: 'TRACK-URL-CHANGED', url})
+const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGED', status})
+*/
+//Какой тип должен быть вместо XXX?
+
+
+// type Status = 'Stopped' | 'Playing' | 'Paused'
+// type StateType = {
+//     volume: number // in percents
+//     trackUrl: string // 'https://blabla.com/track01.mp3',
+//     currentPlayPosition: number // milliseconds,
+//     status: Status
+// }
+// export const playerReducer = (state: StateType, action: any) => {
+//     switch (action.type) {
+//         case 'TRACK-STATUS-CHANGED':
+//             return {
+//                 ...state,
+//                 status: action.status
+//             }
+//         default:
+//             return state
+//     }
+// }
+//
+// const muteTrackAC = () => ({type: 'TRACK-MUTED'})
+// const changeTrackAC = (url: string) => ({type: 'TRACK-URL-CHANGED', url})
+// const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGED', status})
+//
+// const state: StateType = {
+//     status: 'Stopped',
+//     currentPlayPosition: 1213,
+//     trackUrl: 'https://blabla.com/track01.mp3',
+//     volume: 100
+// }
+//
+// const newState = playerReducer(state, changeTrackPlayStatusAC('Paused'))
+// console.log(newState.status === 'Paused')
+//                                                                                 ОТВЕТ:changeTrackPlayStatusAC('Paused')
+//Напишите вместо XXX правильный вызов правильного AC, чтобы в консоли было true
+
+
+// type Status = 'Stopped' | 'Playing' | 'Paused'
+// type StateType = {
+//     volume: number // in percents
+//     trackUrl: string // 'https://blabla.com/track01.mp3',
+//     currentPlayPosition: number // milliseconds,
+//     status: Status
+// }
+// export const playerReducer = (state: StateType, action: any) => {
+//     switch (action.type) {
+//         case 'TRACK-VOLUME-CHANGED':
+//             return {
+//                 ...state,
+//                 volume: action. volumeLevel
+//             }
+//         default:
+//             return state
+//     }
+// }
+//
+// const muteTrackAC = () => ({type: 'TRACK-MUTED'})
+// const changeVolumeAC = (volumeLevel: number) => ({type: 'TRACK-VOLUME-CHANGED', volumeLevel})
+// const changeTrackAC = (url: string) => ({type: 'TRACK-URL-CHANGED', url})
+// const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGED', status})
+//
+// const state: StateType = {
+//     status: 'Stopped',
+//     currentPlayPosition: 1213,
+//     trackUrl: 'https://blabla.com/track01.mp3',
+//     volume: 100
+// }
+// const newState = playerReducer(state, changeVolumeAC(20))
+// console.log(newState.volume === 20)
+//                                                                                ОТВЕТ: volume: action.volumeLevel
+// Напишите вместо XXX правильную строку кода, чтобы изменить громкость трека и увидеть в консоли true.
+
+
+// export const reducer = (state: any, action: any) => {
+//     switch (action.type) {
+//         case 'TRACK-LIKED':
+//             return {
+//                 ...state,
+//                 [action.trackId]: {
+//                     ...state[action.trackId],
+//                     likesCount: state[action.trackId].likesCount + 1
+//                 }
+//             }
+//         default:
+//             return state
+//     }
+// }
+//
+// const likeTrackAC = (trackId: number) => ({type: 'TRACK-LIKED', trackId})
+//
+//
+// const state = {
+//     12: {id: 12, likesCount: 10},
+//     14: {id: 14, likesCount: 2},
+//     100: {id: 100, likesCount: 0},
+// }
+// const newState = reducer(state, likeTrackAC(14))
+//
+// console.log(newState[14].likesCount === 3)
+//                                                                           ОТВЕТ: action.trackId
+// Что нужно написать вместо XXX, чтобы в консоли увидеть true?
+// ❗ Захардкодженные значения использовать запрещено
+
+
+//
+// export const reducer = (state: any, action: any) => {
+//     switch (action.type) {
+//         case 'TRACK-ADDED':
+//             return [{id:action.trackId, likesCount:0},...state]
+//         default:
+//             return state
+//     }
+// }
+//
+// const addTrackAC = (trackId: number) => ({type: 'TRACK-ADDED', trackId})
+//
+// const state = [
+//     {id: 12, likesCount: 10},
+//     {id: 14, likesCount: 2},
+//     {id: 100, likesCount: 0}
+// ]
+// const newState = reducer(state, addTrackAC(300))
+//
+// console.log(newState[3].likesCount === 0)
+// ОТВЕТ: [{id:action.trackId, likesCount:0},...state]
+// Что нужно написать вместо XXX, чтобы трек корректно добавился и в консоли увидеть true?
+
+
+// export const reducer = (state: any, action: any) => {
+//     switch (action.type) {
+//         case 'TRACK-DELETED':
+//             return state.filter((track: any) => track.id != action.trackId )
+//         default:
+//             return state
+//     }
+// }
+//
+// const deleteTrackAC = (trackId: number) => ({type: 'TRACK-DELETED', trackId})
+//
+//
+// const state = [
+//     {id: 12, likesCount: 10},
+//     {id: 14, likesCount: 2},
+//     {id: 100, likesCount: 0}
+// ]
+// const newState = reducer(state, deleteTrackAC(14))
+//
+// console.log(newState.length === 2)
+//                                                                  ОТВЕТ: track.id != action.trackId
+
+// Что нужно написать вместо XXX, чтобы корректно удалить трек и в консоли увидеть true?
+
+
+// type StateType = {
+//     volume: number // in percents
+//     trackUrl: string // 'https://blabla.com/track01.mp3',
+//     currentPlayPosition: number // milliseconds,
+// }
+//
+// export const reducer = (state: StateType, action: any) => {
+//     switch (action.type) {
+//         case 'TRACK-URL-CHANGED':
+//             return {
+//                 ...state,
+//                 trackUrl: action.url
+//             }
+//         case 'TRACK-MUTED':
+//             return {
+//                 ...state,
+//                 volume: 0
+//             }
+//         case 'TRACK-REWOUND-TO-START':
+//             return {
+//                 ...state,
+//                 currentPlayPosition: 0
+//             }
+//         default:
+//             return state
+//     }
+// }
+//                                                            ОТВЕТ:  'TRACK-URL-CHANGED' 'TRACK-MUTED' 'TRACK-REWOUND-TO-START'
+// const muteTrackAC = () => ({type: 'TRACK-MUTED'})
+// const changeTrackAC = (url: string) => ({type: 'TRACK-URL-CHANGED', url})
+// // перемотатьНаНачало:
+// const rewindToStart = () => ({type: 'TRACK-REWOUND-TO-START'})
+
+// Какие типы должны быть вместо XXX, YYY и ZZZ?
+// Ответ дать через пробел, например:   'BLABLA' 'HEYНЕY' 'HIPHOP'
+
+// _____________________________________________________________________________________________________________
+//                                               СРЕДА ЭКЗАМЕН 2
+
+// import {combineReducers, createStore} from 'redux'
+//
+// let initialState = {items: [{name: 'Dimych'}, {name: 'Ignat'}]}
+// const usersReducer = (state = initialState, action: any) => {
+//     return state
+// }
+//
+// const store = createStore(combineReducers({
+//     users: usersReducer
+// }))
+//
+// store.subscribe(() => {
+//     console.log('state changed')
+//  })
+//
+//  store.dispatch({type: 'ANY'})
+//                                                                                           ОТВЕТ: subscribe
+// Что нужно написать вместо XXX, чтобы в консоли увидеть 'state changed'?
+
+
+// import {combineReducers, createStore} from 'redux'
+//
+// let initialState = {items: [{name: 'Dimych'}, {name: 'Ignat'}]}
+// const usersReducer = (state = initialState, action: any) => {
+//     return state
+// }
+//
+// const store = createStore(combineReducers({
+//     users: usersReducer
+// }))
+//
+// store.subscribe(() => {
+//     const state = store.getState()
+//     console.log(state)
+// })
+//
+// store.dispatch({type: 'ANY'})
+//                                                                               ОТВЕТ:store.getState()
+//Что нужно написать вместо XXX, чтобы получить актуальный стейт?
+
+
+// import {combineReducers, createStore} from 'redux'
+// import ReactDOM from 'react-dom'
+// import {Provider, useSelector} from 'react-redux'
+// import React from 'react'
+//
+// let initialState = {items:
+//         [
+//             {id: 1, name: 'Dimych'},
+//             {id: 2, name: 'Ignat'}
+//         ]
+// }
+// const usersReducer = (state = initialState, action: any) => {
+//     return state
+// }
+//
+// let authInitialState = {login: 'Margo', settings: {theme: 'dark'}}
+// const authReducer = (state = authInitialState, action: any) => {
+//     return state
+// }
+//
+// let rootReducer = combineReducers({
+//     users: usersReducer,
+//     auth: authReducer
+// })
+//
+// const store = createStore(rootReducer)
+// type RootStateType = ReturnType<typeof rootReducer>
+//
+// const selector = (state: RootStateType) => state.users.items
+//
+// const Users = () => {
+//
+//     const users = useSelector(selector)
+//
+//     return <ul>
+//         {users.map(u => <li key={u.id}>{u.name}</li>)}
+//     </ul>
+// }
+//
+// ReactDOM.render(<div>
+//         <Provider store={store}>
+//             <Users/>
+//         </Provider>
+//     </div>,
+//     document.getElementById('root')
+// )
+
+// Что нужно написать вместо XXX, чтобы отрендерить список юзеров?                   ОТВЕТ: useSelector(selector)
+
+
+// import React, {useState, useReducer, useEffect} from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+//
+// const changeCounter = (state: number, action: any): number => {
+//     switch (action.type) {
+//         case "INC_VALUE":
+//             return state + 1
+//         case "RESET":
+//             return 0
+//         case "DEC_VALUE":
+//             return state - 1
+//         default:
+//             return state
+//     }
+// }
+//
+// function Counter() {
+//     const [value, setValue] = useReducer(changeCounter, 0)
+//     const [isCounter, setIsCounter] = useState(true)
+//     const commonStyles: React.CSSProperties = {
+//         border: "1px solid black",
+//         margin: "100px auto",
+//         width: "300px",
+//         height: "150px",
+//         textAlign: "center",
+//     }
+//     const btnStyles: React.CSSProperties = {
+//         color: "white",
+//         fontWeight: "bold",
+//         backgroundColor: "darkgray",
+//         borderRadius: "3px",
+//         minWidth: "40px"
+//     }
+//
+//     return (
+//         <div style={commonStyles}>{
+//             isCounter
+//                 ? <div >
+//                     <div style={{marginBottom: "20px"}}>
+//                         <h2>{value}</h2>
+//                         <button
+//                             style={{...btnStyles, backgroundColor: "red"}}
+//                             onClick={() => setIsCounter(false)}>OFF</button>
+//                     </div>
+//                     <button style={btnStyles} onClick={() => setValue({type: "INC_VALUE"})}>+</button>
+//                     <button style={btnStyles} onClick={() => setValue({type: "RESET"})}>0</button>
+//                     <button style={btnStyles} onClick={() => setValue({type: "DEC_VALUE"})}>-</button>
+//
+//                 </div>
+//                 : <div style={{textAlign: "center"}}>
+//                     <h2>Counter not working</h2>
+//                     <button
+//                         style={{...btnStyles, backgroundColor: "green"}}
+//                         onClick={() => setIsCounter(true)}>ON</button>
+//                 </div>
+//         }
+//         </div>
+//     )
+// }
+//
+//
+// ReactDOM.render(
+//     <Counter/>, document.getElementById('root')
+// );                                                                                    //ОТВЕТ: useReducer useState
+// Что надо написать вместо XXX и YYY, чтобы код работал? Напишите через пробел.
+
+
+//
+// import React from 'react'
+// import { createStore } from 'redux'
+// import { Provider, useSelector, useDispatch } from 'react-redux'
+// import ReactDOM from 'react-dom'
+//
+// type StudentType = {
+//     id: number
+//     name: string
+//     age: number
+// }
+//
+// const initState = {
+//     students:
+//         [
+//             {id: 1, name: 'Bob', age: 23},
+//             {id: 2, name: 'Alex', age: 22}
+//         ] as Array<StudentType>
+// }
+// type AddStudentAT = {
+//     type: 'ADD-STUDENT'
+//     name: string
+//     age: number
+//     id: number
+// }
+//
+// type InitialStateType = typeof initState
+//
+// const studentsReducer = (state: InitialStateType = initState, action: AddStudentAT): InitialStateType => {
+//     switch (action.type) {
+//         case 'ADD-STUDENT':
+//             return {
+//                 ...state,
+//                 students: [...state.students, {
+//                     name: action.name,
+//                     age: action.age,
+//                     id: action.id
+//                 }]
+//             }
+//     }
+//     return state
+// }
+//
+// const appStore = createStore(studentsReducer)
+// type RootStateType = ReturnType<typeof studentsReducer>
+//
+//
+// const StudentList = () => {
+//     const students = useSelector((state: RootStateType) => state.students)
+//     return (
+//         <ul>
+//             {students.map(s => <li key={s.id}>{`${s.name}. ${s.age} years.`}</li>)}
+//         </ul>
+//     )
+// }
+// const App = () => {
+//     return <StudentList/>
+// }
+//
+// ReactDOM.render(<div>
+//         <Provider store={appStore}>
+//             <App/>
+//         </Provider>
+//     </div>,
+//     document.getElementById('root')
+// )                                                                               ОТВЕТ: Provider store appStore
+
+// Что нужно написать вместо XXX, YYY и ZZZ, чтобы отобразился список студентов?
+
+
+// import {createStore} from 'redux'
+// import ReactDOM from 'react-dom'
+// import {Provider, useSelector, useDispatch} from 'react-redux'
+// import React from 'react'
+//
+// const students = {
+//     students: [
+//         {id: 1, name: 'Bob'},
+//         {id: 2, name: 'Alex'},
+//         {id: 3, name: 'Donald'},
+//         {id: 4, name: 'Ann'},
+//     ]
+// }
+// type RemoveStudentAT = {
+//     type: "REMOVE-STUDENT"
+//     id: number
+// }
+// const RemoveStudentAC = (id: number): RemoveStudentAT => ({
+//     type: "REMOVE-STUDENT",
+//     id
+// })
+//
+// const studentsReducer = (state = students, action: RemoveStudentAT) => {
+//     switch (action.type) {
+//         case "REMOVE-STUDENT":
+//             return {
+//                 ...state,
+//                 students: state.students.filter(s => s.id !== action.id)
+//             }
+//     }
+//     return state
+// }
+//
+// const store = createStore(studentsReducer)
+// type RootStateType = ReturnType<typeof studentsReducer>
+//
+//
+// const StudentList = () => {
+//     const listItemStyles = {
+//         width: "100px",
+//         borderBottom: "1px solid gray",
+//         cursor: "pointer",
+//     }
+//     const students = useSelector((state: RootStateType) => state.students)
+//     const dispatch = useDispatch()
+//     const studentsList = students.map(s => {
+//         const removeStudent = () => {
+//             dispatch(RemoveStudentAC(s.id))
+//         }
+//         return (
+//             <li key={s.id}
+//                 style={listItemStyles}
+//                 onClick={removeStudent}>
+//                 {s.name}
+//             </li>)
+//     })
+//     return (
+//         <ol>
+//             {studentsList}
+//         </ol>
+//
+//     )
+// }
+//
+//
+// ReactDOM.render(<div>
+//         <Provider store={store}>
+//             <StudentList/>
+//         </Provider>
+//     </div>,
+//     document.getElementById('root')
+// )
+//                                                                                 ОТВЕТ: dispatch RemoveStudentAC s.id
+// Что нужно написать вместо XXX, YYY и ZZZ, чтобы при клике по имени студент
+// удалялся из списка? Напишите через пробел.
+// _________________________________________________________________________________________________________
+//                                                  СРЕДА ЭКЗАМЕН 3
+
+// import React, {useCallback, useEffect, useState} from 'react'
+// import ReactDOM from 'react-dom'
+// export const TempManager = () => {
+//    const [temp, setTemp] = useState(0)
+//    const [seconds, setSeconds] = useState(0)
+//    const resetTemp = useCallback(() => setTemp(0), [])
+//    const increaseSeconds = () => setSeconds(seconds + 100)
+//    return (
+//        <>
+//            <TempDisplay temp={temp} reset={resetTemp}/>
+//            <div>
+//                <p><b>Секунды:</b> {seconds} с</p>
+//                <button onClick={increaseSeconds}>
+//                    Увеличить время на 100 секунд
+//                </button>
+//            </div>
+//        </>
+//    )
+// }
+//
+// const TempDisplay = React.memo((props: any) => {
+//     console.log('Render TempDisplay')
+//   // useEffect(()=>{console.log('Render TempDisplay')},[TempDisplay])
+//
+//    return (
+//        <div>
+//            <p><b>Температура</b>: {props.temp} &#176;</p>
+//            <button onClick={props.reset}>Reset</button>
+//        </div>
+//    )
+// })
+//
+// ReactDOM.render(<TempManager/>, document.getElementById('root'))
+////При увеличении времени (при клике на button) компонент TempDisplay
+////тоже перерисовывается. Эта перерисовка является избыточной.
+////Найдите в чем причина лишних перерисовок.                                  ОТВЕТ: const resetTemp = useCallback(() => setTemp(0), [])
+////Исправленную версию строки напишите в качестве ответа.
+//const increaseSeconds = useCallback(() => setSeconds(seconds + 100),[])   неправильно
+//useEffect(()=>{console.log('Render TempDisplay')},[TempDisplay]) неправильно
+////Пример ответа: const increaseSeconds = () => setSeconds(seconds + 100)
+
+
+// import React, { useCallback, useState } from 'react'
+// import ReactDOM from 'react-dom'
+//
+// export const App = () => {
+//     const [temp, setTemp] = useState(100)
+//     const [seconds, setSeconds] = useState(0)
+//
+//     const resetTemp = useCallback(() => setTemp(0), [])
+//
+//     const incSec = useCallback(() => setSeconds(seconds + 1), [seconds])
+//
+//     return <>
+//         <TempDisplay temp={temp} resetTemp={resetTemp}/>
+//         <SecDisplay seconds={seconds} incSec={incSec}/>
+//     </>
+// }
+// const TempDisplay = React.memo((props: any) => {
+//     console.log('Render TempDisplay')
+//     return (
+//         <div style={{marginBottom: '10px'}} onClick={props.reset}>
+//             <p>
+//                 <b>Температура: </b>{props.temp} &#176;
+//             </p>
+//             <button onClick={props.resetTemp}>Сбросить температуру к 0</button>
+//         </div>
+//     )
+// })
+//
+// const SecDisplay = React.memo((props: any) => {
+//     console.log('Render SecDisplay')
+//     return (
+//         <div>
+//             <p><b>Секунды:</b> {props.seconds} c </p>
+//             <button style={{marginRight: '20px'}}
+//                     onClick={props.incSec}>
+//                 Увеличить время на 1 секунду
+//             </button>
+//         </div>
+//     )
+// })
+//
+// ReactDOM.render(<App/>, document.getElementById('root'))
+
+// Почему не корректно работает счетчик времени при нажатии на кнопку (срабатывает только 1 раз) ?
+// Найдите в чем причина.
+// Исправленную версию строки напишите в качестве ответа
+//                                                                     ОТВЕТ: const incSec = useCallback(() => setSeconds(seconds + 1), [seconds])
+// Пример ответа: const incSec = () => setSeconds(seconds + 1)
+
+
+// import React, {useCallback, useEffect, useState} from 'react'
+// import ReactDOM from 'react-dom'
+//
+// export const App = () => {
+//     const [temp, setTemp] = useState(10)
+//     const [seconds, setSeconds] = useState(100)
+//
+//     const increaseSeconds = () => setSeconds(seconds + 10)
+//     const increaseTemp  = useCallback(() => setTemp(temp + 1),[temp])
+//
+//     return <>
+//         <TempDisplay temp={temp} increaseTemp={increaseTemp}/>
+//
+//         <div>
+//             <b>Секунды :</b> {seconds} с
+//             <button style={{marginLeft: '15px'}}
+//                     onClick={increaseSeconds}>
+//                 Увеличить на 10 секунд
+//             </button>
+//         </div>
+//     </>
+// }
+// const TempDisplay = React.memo((props: any) => {
+//     console.log('Render TempDisplay')
+//     return (
+//         <div style={{marginBottom: '15px'}}
+//              onClick={props.reset}>
+//             <b>Температура:</b> {props.temp} &#176;
+//             <button style={{marginLeft: '15px'}}
+//                     onClick={props.increaseTemp}>
+//                 Увеличить температуру на 1 градус
+//             </button>
+//         </div>
+//     )
+// })
+//
+// ReactDOM.render(<App/>, document.getElementById('root'));
+
+// Что надо написать вместо XXX для того, чтобы обязательно выполнялись 2 условия:
+// 1) При нажатии на кнопку "Увеличить температуру на 1 градус" температура увеличивалась
+// 2) Компонент TempDisplay не должен перерисовываться при нажатии на кнопку "Увеличить на 10 секунд"
+//                                                       ОТВЕТ: useCallback(() => setTemp(temp + 1),[temp])
+// Пример ответа: useEffect(() => setCounter(count + 1), [count])
+
+
+// import React, {useCallback, useMemo, useState} from 'react'
+// import ReactDOM from 'react-dom'
+//
+// type ButtonType = {
+//     id: number
+//     title: string
+//     forAdminOnly: boolean
+// }
+// const buttons: ButtonType[] = [
+//     {id: 1, title: 'delete', forAdminOnly: true},
+//     {id: 2, title: 'update', forAdminOnly: true},
+//     {id: 3, title: 'create', forAdminOnly: false},
+// ]
+//
+// export const App = ({isAdmin}: { isAdmin: boolean }) => {
+//
+//     const [seconds, setSeconds] = useState(0)
+//
+//     const increaseSeconds = () => setSeconds(seconds + 10)
+//
+//     const correctButtons = useMemo(() => {
+//         return buttons.filter(b => isAdmin ? true : !b.forAdminOnly)
+//     }, [isAdmin])
+//
+//     return <>
+//         <ButtonsPanel buttons={correctButtons}/>
+//         <div>
+//             <p>
+//                 <b>Секунды: {seconds}</b>
+//             </p>
+//             <button onClick={increaseSeconds}>
+//                 Увеличить на 10 секунд
+//             </button>
+//         </div>
+//     </>
+// }
+//
+// const ButtonsPanel = React.memo((props: { buttons: Array<ButtonType> }) => {
+//     console.log('Render ButtonsPanel')
+//     return (
+//         <div style={{marginBottom: '15px'}}>
+//             <div style={{marginBottom: '15px'}}>
+//                 <b>Панель с кнопками</b>
+//             </div>
+//             <div>
+//                 {props.buttons.map(b => <button key={b.id}>{b.title}</button>)}
+//             </div>
+//         </div>
+//     )
+// })
+//
+// ReactDOM.render(<App isAdmin={true}/>, document.getElementById('root'))
+
+// Что нужно написать вместо XXX и YYY,
+// чтобы избавиться от лишнего перерендера компонента ButtonsPanel
+// при нажатии на кнопку "Увеличить на 10 секунд" ?
+
+// Ответ дайте через пробел: 111 222                                       ОТВЕТ: useMemo isAdmin
+
+
+// _______________________________________________________________________________________________________________
+//                                                 СРЕДА ЭКЗАМЕН 4
+
+// import {combineReducers, createStore} from 'redux'
+//
+// let initialState = {items: [{name: 'Dimych'}, {name: 'Ignat'}]}
+// const usersReducer = (state = initialState, action: any) => {
+//     return state
+// }
+//
+// let authInitialState = {login: 'Margo', settings: {theme: 'dark'}}
+// const authReducer = (state = authInitialState, action: any) => {
+//     return state
+// }
+//
+// const store = createStore(combineReducers({
+//     users: usersReducer,
+//     auth: authReducer
+// }))
+//
+// store.subscribe(() => {
+//     const login = store.getState().auth.login
+//     console.log(login)
+// })
+//
+// store.dispatch({type: 'ANY'})
+// export default store;
+//     ОТВЕТ: auth: authReducer
+// Что нужно написать вместо XXX, чтобы в консоли увидеть 'Margo'?
+
+
+// export const reducer = (state: any, action: any) => {
+//     switch (action.type) {
+//         case 'TRACK-ADDED':
+//             return {
+//                 ...state,
+//                 [action.trackId]: {
+//                     id: action.trackId, likesCount: 0
+//                 }
+//             }
+//         default:
+//             return state
+//     }
+// }
+//
+// const addTrackAC = (trackId: number) => ({type: 'TRACK-ADDED', trackId})
+//
+// const state = {
+//     12: {id: 12, likesCount: 10},
+//     14: {id: 14, likesCount: 2},
+//     100: {id: 100, likesCount: 0},
+// }
+// const newState = reducer(state, addTrackAC(300))
+// console.log(newState[300].likesCount === 0)
+//            ОТВЕТ: addTrackAC(300)
+// Что нужно написать вместо XXX, чтобы в консоли увидеть true?
+
+
+// export const reducer = (state: any, action: any) => {
+//     switch (action.type) {
+//         case 'TRACK-DELETED':
+//             return state.filter((track: any) => track.id !== action.trackId)
+//         default:
+//             return state
+//     }
+// }
+//
+// const deleteTrackAC =(trackId: number) =>({type:'TRACK-DELETED',trackId})
+//
+//
+// const state = [
+//     {id: 12, likesCount: 10},
+//     {id: 14, likesCount: 2},
+//     {id: 100, likesCount: 0}
+// ]
+//
+// const newState = reducer(state, deleteTrackAC(14))
+// console.log(newState.length === 2)
+// ОТВЕТ: {type:'TRACK-DELETED',trackId}
+// Что нужно написать вместо XXX, чтобы корректно удалить трек и в консоли увидеть true?
+
+
+// export const reducer = (state: any, action: any) => {
+//     switch (action.type) {
+//         case 'USER-NAME-UPDATED':
+//             return {...state,user:{...state.user,name:action.name}}
+//         default:
+//             return state
+//     }
+// }
+//
+// const updateUserNameAC = (name: string) => ({type: 'USER-NAME-UPDATED', name})
+//
+//
+// const state = {
+//     count: 10,
+//     user: {
+//         name: 'Dimych',
+//         age: 18,
+//         isMarried: true,
+//         status: "offline"
+//     },
+//     books: ['you don\'t know JS']
+// }
+// const newState = reducer(state, updateUserNameAC('Dmitry'))
+//
+// console.log(newState.user.name === 'Dmitry')
+// console.log(newState.books === state.books)
+// console.log(newState.user !== state.user)
+//   ОТВЕТ: {...state,user:{...state.user,name:action.name}}
+//Что нужно написать вместо XXX, чтобы корректно обновить имя пользователя и в консоли увидеть:  true true true?
+
+// _______________________________________________________________________________________________________________________
+//                                                     ЧЕТВЕРГ ЭКЗАМЕН 1
+
+// import axios from 'axios'
+// import React, { useEffect, useState } from 'react'
+// import ReactDOM from 'react-dom/client';
+//
+// // Types
+// type TodoType = {
+//     id: number
+//     title: string
+//     completed: boolean
+//     userId: number
+// }
+//
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const todosAPI = {
+//     getTodos() {
+//         return instance.get<TodoType[]>('todos?_limit=15')
+//     }
+// }
+//
+//
+// // App
+// export const App = () => {
+//
+//     const [todos, setTodos] = useState<Array<TodoType>>([])
+//
+//     useEffect(() => {
+//         todosAPI.getTodos().then((res) => setTodos(res.data))
+//     }, [])
+//
+//
+//     return (
+//         <>
+//             <h2>✅ Список тудулистов</h2>
+//             {
+//                 todos.map((t) => {
+//                     return (
+//                         <div style={t.completed ? {color: 'grey'} : {}} key={t.id}>
+//                             <input type="checkbox" checked={t.completed}/>
+//                             <b>Описание</b>: {t.title}
+//                         </div>
+//                     )
+//                 })
+//             }
+//         </>
+//     )
+// }
+//
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<App/>)
+
+// Описание:
+// При написании типизации по невнимательности было допущено несколько ошибок.
+// Напишите через пробел правильные свойства в TodoType, в которых была допущена ошибка.
+// Debugger / network / документация вам в помощь
+
+// Пример ответа: id status isDone                                                      ОТВЕТ: title completed
+
+//
+// import axios from 'axios'
+// import React, {useEffect, useState} from 'react'
+// import ReactDOM from 'react-dom/client';
+//
+// // Types
+// type PostType = {
+//     body: string
+//     id: number
+//     title: string
+//     userId: number
+// }
+//
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const postsAPI = {
+//     getPosts() {
+//         return instance.get<PostType[]>('posts')
+//         // Promise.resolve() стоит в качестве заглушки, чтобы TS не ругался и код компилировался
+//         // Promise.resolve() нужно удалить и написать правильный запрос для получения постов
+//         // return Promise.resolve()
+//     },
+// }
+//
+//
+// // App
+// export const App = () => {
+//
+//     const [posts, setPosts] = useState<PostType[]>([])
+//
+//     useEffect(() => {
+//         postsAPI.getPosts()
+//             .then((res: any) => {
+//                 setPosts(res.data)
+//             })
+//     }, [])
+//
+//
+//     return (
+//         <>
+//             <h1>📜 Список постов</h1>
+//             {
+//                 posts.length
+//                     ? posts.map(p => {
+//                         return <div key={p.id}><b>title</b>: {p.title}</div>
+//                     })
+//                     : <h2>Постов нету 😥</h2>
+//             }
+//         </>
+//     )
+// }
+//
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<App/>)
+
+// Описание:
+// Напишите запрос на сервер для получения всех постов
+// Типизацию возвращаемых данных в ответе указывать необязательно, но можно и указать (в ответах учтены оба варианта).
+// Исправленную версию строки напишите в качестве ответа.
+// Пример ответа: return instance.put('todolists/1')                     ОТВЕТ: return instance.get<PostType[]>('posts')
+
+
+
+// import axios from 'axios'
+// import React, { ChangeEvent, useEffect, useState } from 'react'
+// import ReactDOM from 'react-dom/client';
+//
+// // Types
+// type CommentType = {
+//     postId: number
+//     id: number
+//     name: string
+//     email: string
+//     body: string
+// }
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const commentsAPI = {
+//     getComments() {
+//         return instance.get<CommentType[]>('comments?_limit=10')
+//     },
+//     createComment(body: string) {
+//         const payload = {
+//             body,
+//             email: 'test@gmail.com',
+//             name: 'Name',
+//             postId: Math.random()
+//         }
+//         // Promise.resolve() стоит в качестве заглушки, чтобы TS не ругался и код компилировался
+//         // Promise.resolve() нужно удалить и написать правильный запрос для создания нового комментария
+//         return instance.post<CommentType[]>('comments',payload)
+//     }
+// }
+//
+//
+// // App
+// export const App = () => {
+//
+//     const [comments, setComments] = useState<CommentType[]>([])
+//     const [commentBody, setCommentBody] = useState('')
+//
+//     useEffect(() => {
+//         commentsAPI.getComments()
+//             .then((res) => {
+//                 setComments(res.data)
+//             })
+//     }, [])
+//
+//     const createPostHandler = () => {
+//         commentsAPI.createComment(commentBody)
+//             .then((res: any) => {
+//                 const newComment = res.data
+//                 setComments([newComment, ...comments])
+//                 setCommentBody('')
+//             })
+//     };
+//
+//     const createTitleHandler = (e: ChangeEvent<HTMLInputElement>) => {
+//         setCommentBody(e.currentTarget.value)
+//     };
+//
+//     return (
+//         <>
+//             <h1>📝 Список комментариев</h1>
+//
+//             <div style={{marginBottom: '15px'}}>
+//                 <input style={{width: '300px'}}
+//                        type="text"
+//                        value={commentBody}
+//                        placeholder={'Введите новый комментрарий'}
+//                        onChange={createTitleHandler}
+//                 />
+//                 <button style={{marginLeft: '15px'}}
+//                         onClick={() => createPostHandler()}>
+//                     Добавить новый комментарий
+//                 </button>
+//             </div>
+//
+//             {
+//                 comments.map(c => {
+//                     return <div key={c.id}><b>Comment</b>: {c.body} </div>
+//                 })
+//             }
+//         </>
+//     )
+// }
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<App/>)
+
+// Описание:
+// Напишите запрос на сервер для создания нового комментария.
+// Типизацию возвращаемых данных в ответе указывать необязательно, но можно и указать (в ответах учтены оба варианта).
+// Исправленную версию строки напишите в качестве ответа.
+// Пример ответа: return Promise.resolve<PostType[]>(data)                   ОТВЕТ: return instance.post<CommentType[]>('comments',payload) не правильно
+
+
+// import axios from 'axios'
+// import React, { useEffect, useState } from 'react'
+// import ReactDOM from 'react-dom/client';
+//
+// // Types
+// type PostType = {
+//     body: string
+//     id: number
+//     title: string
+//     userId: number
+// }
+//
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const postsAPI = {
+//     getPosts() {
+//         return instance.get<PostType[]>('posts')
+//     },
+//     deletePost(id: number) {
+//         return instance.delete(`posts/${id}`)
+//     }
+// }
+//
+//
+// // App
+// export const App = () => {
+//
+//     const [posts, setPosts] = useState<PostType[]>([])
+//
+//     useEffect(() => {
+//         postsAPI.getPosts()
+//             .then((res) => {
+//                 setPosts(res.data)
+//             })
+//     }, [])
+//
+//     const deletePostHandler = (id: number) => {
+//         postsAPI.deletePost(id)
+//             .then((res) => {
+//                 const newPostsArr = posts.filter(p => p.id !== id)
+//                 setPosts(newPostsArr)
+//             })
+//     };
+//
+//     return (
+//         <>
+//             <h1>📜 Список постов</h1>
+//             {posts.map(p => {
+//                 return (
+//                     <div key={p.id}>
+//                         <b>title</b>: {p.title}
+//                         <button style={{marginLeft: '15px'}}
+//                                 onClick={() => deletePostHandler(p.id)}>
+//                             x
+//                         </button>
+//                     </div>
+//                 )
+//             })}
+//         </>
+//     )
+// }
+//
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<App/>)
+                                                     //       ОТВЕТ:   return instance.delete(`posts/${id}`)
+// Описание:
+// Почему не удаляется post при нажатии на кнопку удаления (х) ?
+// Найдите ошибку и вставьте исправленную строку кода в качестве ответа
+// Пример ответа: return instance.put('posts/1')
+
+
+// import axios from 'axios'
+// import React, { useEffect, useState } from 'react'
+// import ReactDOM from 'react-dom/client';
+//
+// // Types
+// type PhotoType = {
+//     albumId: number
+//     id: number
+//     title: string
+//     url: string
+//     thumbnailUrl: string
+// }
+//
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const photosAPI = {
+//     getPhoto() {
+//         return instance.get<PhotoType>('photos/1')
+//     },
+//     updatePhotoTitle(payload: PhotoType) {
+//         return instance.put<PhotoType>(`photos/${payload.id}`, payload)
+//     }
+// }
+//
+//
+// // App
+// export const App = () => {
+//
+//     const [photo, setPhoto] = useState<PhotoType | null>(null)
+//
+//     useEffect(() => {
+//         photosAPI.getPhoto()
+//             .then((res) => {
+//                 setPhoto(res.data)
+//             })
+//     }, [])
+//
+//     const updatePhotoHandler = () => {
+//         const payload = {
+//             title: 'Обновление произошло успешно 🚀',
+//             albumId: 1,
+//             id: 1,
+//             url: "https://via.placeholder.com/600/92c952",
+//             thumbnailUrl: "https://via.placeholder.com/150/92c952"
+//         }
+//         photosAPI.updatePhotoTitle(payload)
+//             .then((res) => {
+//                 setPhoto(res.data)
+//             })
+//     };
+//
+//     return (
+//         <>
+//             <h1>📸 Фото</h1>
+//             <div>
+//                 <div style={{marginBottom: '15px'}}>
+//                     <b>title</b>: {photo?.title}
+//                     <button style={{marginLeft: '15px'}}
+//                             onClick={updatePhotoHandler}>
+//                         Обновить описание к фотографии
+//                     </button>
+//                 </div>
+//                 <div><img src={photo?.url} alt=""/></div>
+//             </div>
+//         </>
+//     )
+// }
+//
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<App/>)
+
+// Описание:
+// При нажатии на кнопку "Обновить описание к фотографии" title должен обновиться
+// на надпись "Обновление произошло успешно 🚀", но из-за невнимательности была допущена ошибка
+//                                                                      ОТВЕТ:  return instance.put<PhotoType>(`photos/${payload.id}`, payload)
+// Найдите и исправьте ошибку
+// Исправленную версию строки напишите в качестве ответа.
+// Пример ответа: photosAPI.updatePhotoTitle(id, title)
+
+
+
+// import axios from 'axios'
+// import React, { useEffect, useState } from 'react'
+// import ReactDOM from 'react-dom/client'
+//
+// // Types
+// type PhotoType = {
+//     albumId: number
+//     id: number
+//     title: string
+//     url: string
+//     thumbnailUrl: string
+// }
+//
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const photosAPI = {
+//     getPhotos(page: number) {
+//         return instance.get<PhotoType[]>(`photos?_limit=2&_page=${page}`)
+//     }
+// }
+//
+//
+// // App
+//
+// const buttons = [
+//     {id: 1, title: '1'},
+//     {id: 2, title: '2'},
+//     {id: 3, title: '3'},
+// ]
+//
+// export const App = () => {
+//
+//     const [photos, setPhotos] = useState<PhotoType[]>([])
+//     const [currentPage, setCurrentPage] = useState(1)
+//
+//     useEffect(() => {
+//         photosAPI.getPhotos(currentPage)
+//             .then((res) => {
+//                 setPhotos(res.data)
+//             })
+//     }, [currentPage])
+//
+//     const setPageHandler = (page: number) => {
+//         setCurrentPage(page)
+//     };
+//
+//     return (
+//         <>
+//             <h1>📸 Список фоток</h1>
+//             {/* Photos */}
+//             {
+//                 photos.map(p => {
+//                     return <div style={{marginBottom: '25px'}} key={p.id}>
+//                         <b>title</b>: {p.title}
+//                         <div><img src={p.thumbnailUrl} alt=""/></div>
+//                     </div>
+//                 })
+//             }
+//
+//             {/* Buttons */}
+//             {
+//                 buttons.map(b => {
+//                     return (
+//                         <button key={b.id}
+//                                 style={b.id === currentPage ? {backgroundColor: 'lightblue'} : {}}
+//                                 onClick={() => setPageHandler(b.id)}>
+//                             {b.title}
+//                         </button>
+//                     )
+//                 })
+//             }
+//         </>
+//     )
+// }
+//
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<App/>)
+
+// Описание:
+// Пагинация не работает.
+// При переходе по страницам, контент (описание и изображение фоток) должен меняться.
+// Подсказка. В одной строке кода допущено 2 ошибки.
+// Задача: найти эти ошибки, и исправленную версию строки написать в качестве ответа.
+// Пример ответа: const [currentPage, setCurrentPage] = useState(page)
+
+
+// import axios from 'axios'
+// import React, { useEffect, useState } from 'react'
+// import ReactDOM from 'react-dom/client';
+//
+// // Types
+// type TodoType = {
+//     id: number
+//     title: string
+//     completed: boolean
+//     userId: number
+// }
+//
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const todosAPI = {
+//     getTodo(todoId: number) {
+//         return instance.get<TodoType>(`todos/${todoId}`)
+//     }
+// }
+//
+//
+// // App
+// export const App = () => {
+//
+//     const [todo, setTodo] = useState<TodoType | null>(null)
+//     const [error, setError] = useState<string>('')
+//
+//     useEffect(() => {
+//         const todoId = 4
+//         todosAPI.getTodo(todoId)
+//             .then((res: any) => setTodo(res.data))
+//             .catch(e => {
+//                 setError('Ошибка 😰. Анализируй network 😉')
+//             })
+//     }, [])
+//
+//
+//     return (
+//         <>
+//             <h2>✅ Тудулист</h2>
+//             {
+//                 !!todo
+//                     ? <div>
+//                         <div style={todo?.completed ? {color: 'grey'} : {}} key={todo?.id}>
+//                             <input type="checkbox" checked={todo?.completed}/>
+//                             <b>Описание</b>: {todo?.title}
+//                         </div>
+//                         <h2>Так держать. Ты справился 🚀</h2>
+//                     </div>
+//                     : <h2 style={{ color: 'red' }}>{error}</h2>
+//             }
+//         </>
+//     )
+// }
+//
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<App/>)
+
+// Описание:
+// Студент по неопытности допустил одну маленькую ошибку, но из-за нее он не может вывести на экран тудулист.
+// Найдите ошибку и вставьте исправленную версию строки кода в качестве ответа
+// Пример ответа:  'https://jsonplaceholder.typicode.com/todos'
+                                                                                              //   ОТВЕТ:   'todos/${todoId}'
+// P.S. Эта ошибка из реальной жизни, студенты часто ошибаются и не могут понять в чем дело.
+
+
+
+// import axios from 'axios'
+// import React, { useEffect, useState } from 'react'
+// import ReactDOM from 'react-dom/client';
+//
+// // TYPES
+// type UserType = {
+//     avatar: string
+//     email: string
+//     first_name: string
+//     id: 1
+//     last_name: string
+// }
+//
+// type ColorType = {
+//     color: string
+//     id: number
+//     name: string
+//     pantone_value: string
+//     year: number
+// }
+
+// type UsersResponseType = {
+//     total: number
+//     total_pages: number
+//     page: number
+//     per_page: number
+//     support: {
+//         url: string
+//         text: string
+//     }
+//     url: string
+//     data: UserType[]
+// }
+
+// type ColorsResponseType = {
+//     total: number
+//     total_pages: number
+//     page: number
+//     per_page: number
+//     support: {
+//         url: string
+//         text: string
+//     }
+//     url: string
+//     data: ColorType[]
+// }
+
+// type CommonResponseType <T> = {
+//     total: number
+//     total_pages: number
+//     page: number
+//     per_page: number
+//     support: {
+//         url: string
+//         text: string
+//     }
+//     url: string
+//     data: T
+//     // your code
+// }
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://reqres.in/api/'
+// })
+//
+// const reqresAPI = {
+//     getUsers() {
+//         return instance.get< CommonResponseType<UserType[]>>('users')
+//     },
+//     getColors() {
+//         return instance.get<CommonResponseType<ColorType[]>>('colors')
+//     }
+// }
+//
+//
+// // App
+// const App = () => {
+//     return (
+//         <>
+//             <h1>Reqres API</h1>
+//             <Users/>
+//             <Colors/>
+//         </>
+//     )
+// }
+//
+// const Users = () => {
+//
+//     const [users, setUsers] = useState<UserType[]>([])
+//
+//     useEffect(() => {
+//         reqresAPI.getUsers()
+//             .then((res) => setUsers(res.data.data))
+//     }, [])
+//
+//     return (
+//         <div>
+//             <h2>Users</h2>
+//             <div style={{display: 'flex'}}>
+//                 {
+//                     users.map(u => {
+//                         return (
+//                             <div key={u.id} style={{marginRight: '25px'}}>
+//                                 <p>{u.first_name}</p>
+//                                 <img src={u.avatar} alt=""/>
+//                             </div>
+//                         )
+//                     })
+//                 }</div>
+//         </div>
+//     )
+// }
+//
+// const Colors = () => {
+//
+//     const [colors, setColors] = useState<ColorType[]>([])
+//
+//     useEffect(() => {
+//         reqresAPI.getColors()
+//             .then((res) => setColors(res.data.data))
+//     }, [])
+//
+//     return (
+//         <div>
+//             <h2>Colors</h2>
+//             <div style={{display: 'flex'}}>
+//                 {
+//                     colors.map(c => {
+//                         return (
+//                             <div key={c.id} style={{marginRight: '25px'}}>
+//                                 <p>{c.name}</p>
+//                                 <div style={{backgroundColor: c.color, width: '128px', height: '30px'}}>
+//                                     <b>{c.color}</b>
+//                                 </div>
+//                             </div>
+//                         )
+//                     })
+//                 }</div>
+//         </div>
+//     )
+// }
+//
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<App/>)
+
+// Описание:
+// При запуске проекта на экране вы увидите 2 списка: Users и Colors.
+// С ними все хорошо, но обратите внимание на типизацию ответов с сервера UsersResponseType и ColorsResponseType.
+// Дублирование типов на лицо.
+// Ваша задача написать дженериковый тип CommonResponseType и заменить им дублирующие типы.
+// Очередность свойств в типах менять запрещено (по причине что нам будет тяжело перебрать все правильные варианты :) )
+// Параметр тип назовите буквой T
+// В качестве ответа нужно скопировать полностью рабочий дженериковый тип CommonResponseType
+
+ // ОТВЕТ:
+ //     type CommonResponseType <T> = {
+ //         total: number
+ //         total_pages: number
+ //         page: number
+ //         per_page: number
+ //         support: {
+ //             url: string
+ //             text: string
+ //         }
+ //         url: string
+ //         data: T
+ //     }
+
+// ___________________________________________________________________________________________________________________
+//                                                 ЧЕТВЕРГ ЭКЗАМЕН 2
+
+// export React from 'react'
+// import ReactDOM from 'react-dom/client';
+//
+//
+// const thunkCreator = () => (dispatch: any, use: any) => {
+//     // 1. Server requests
+//     // 2. Dispatch actions
+// }
+//
+//
+// // App
+// const App = () => {
+//     return (
+//         <>
+//             <h1>В этом задании смотреть на экран не нужно. Ничего не изменится 😈</h1>
+//             <p>Читайте описание к заданию</p>
+//         </>
+//     )
+// }
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<App/>)
+
+// Описание:
+// Вместо XXX и YYY через пробел напишите параметры которые приходят в санку.
+// Пример ответа: useCallback state                                                      ОТВЕТ: dispatch getState
+
+
+
+// import React, { useEffect } from 'react'
+// import ReactDOM from 'react-dom/client';
+// import { AnyAction, applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux'
+// import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+// import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk'
+// import axios from 'axios';
+//
+// // Types
+// type TodoType = {
+//     id: number
+//     title: string
+//     completed: boolean
+//     userId: number
+// }
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const todosAPI = {
+//     getTodos() {
+//         return instance.get<TodoType[]>('todos?_limit=15')
+//     },
+//     changeTodoStatus(id: number, completed: boolean) {
+//         return instance.patch(`todos/${id}`, {completed})
+//     }
+// }
+//
+//
+// // Reducer
+// const initState = [] as TodoType[]
+//
+// type InitStateType = typeof initState
+//
+// const todosReducer = (state: InitStateType = initState, action: ActionsType) => {
+//     switch (action.type) {
+//         case 'TODOS/GET-TODOS':
+//             return action.todos
+//
+//         case 'TODOS/CHANGE-TODO-STATUS':
+//             return state.map((t) => {
+//                 if (t.id === action.todo.id) {
+//                     return {...t, completed: action.todo.completed}
+//                 } else {
+//                     return t
+//                 }
+//             })
+//
+//         default:
+//             return state
+//     }
+// }
+//
+// const getTodosAC = (todos: TodoType[]) => ({type: 'TODOS/GET-TODOS', todos} as const)
+// const changeTodoStatusAC = (todo: TodoType) => ({type: 'TODOS/CHANGE-TODO-STATUS', todo} as const)
+// type ActionsType = ReturnType<typeof getTodosAC> | ReturnType<typeof changeTodoStatusAC>
+//
+// // Thunk
+// const getPostsTC = (): AppThunk => (dispatch) => {
+//     todosAPI.getTodos()
+//         .then((res) => {
+//             dispatch(getTodosAC(res.data))
+//         })
+// }
+//
+// const changeTodoStatusTC = (id: number, completed: boolean): AppThunk => (dispatch) => {
+//     todosAPI.changeTodoStatus(id, completed)
+//         .then((res) => {
+//             dispatch(changeTodoStatusAC(res.data))
+//         })
+// }
+//
+// // Store
+// const rootReducer = combineReducers({
+//     todos: todosReducer,
+// })
+//
+// const store = createStore(rootReducer, applyMiddleware(thunk))
+// type RootState = ReturnType<typeof store.getState>
+// type AppDispatch = ThunkDispatch<RootState, unknown, ActionsType>
+// type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
+// const useAppDispatch = () => useDispatch<AppDispatch>()
+// const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+//
+// // App
+// const App = () => {
+//     const dispatch = useAppDispatch()
+//     const todos = useAppSelector(state => state.todos)
+//
+//     useEffect(() => {
+//         getPostsTC()
+//     }, [])
+//
+//     const changeStatusHandler = (id: number, completed: boolean) => {
+//         dispatch(changeTodoStatusTC(id, completed))
+//     };
+//
+//     return (
+//         <>
+//             <h2>✅ Список тудулистов</h2>
+//             {
+//                 todos.length ?
+//
+//                     todos.map((t) => {
+//                         return (
+//                             <div style={t.completed ? {color: 'grey'} : {}} key={t.id}>
+//                                 <input type="checkbox"
+//                                        checked={t.completed}
+//                                        onChange={() => changeStatusHandler(t.id, !t.completed)}
+//                                 />
+//                                 <b>Описание</b>: {t.title}
+//                             </div>
+//                         )
+//                     })
+//                     : <h2>Тудулистов нету 😥</h2>
+//             }
+//         </>
+//     )
+// }
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<Provider store={store}> <App/></Provider>)
+
+// Описание:
+// При загрузке приложения вы должны увидеть список тудулистов,
+// но из-за невнимательности была допущена ошибка.
+// Найдите и исправьте ошибку.
+// Исправленную версию строки напишите в качестве ответа.
+// Пример ответа: type InitStateType = typeof initState
+
+
+
+// import React from 'react'
+// import ReactDOM from 'react-dom/client';
+// import { combineReducers, legacy_createStore as createStore } from 'redux'
+// import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+// import axios from 'axios';
+// import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
+//
+// // Types
+// type PhotoType = {
+//     albumId: number
+//     id: number
+//     title: string
+//     url: string
+//     thumbnailUrl: string
+// }
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const photosAPI = {
+//     getPhotos() {
+//         return instance.get<PhotoType[]>('photos?_limit=3')
+//     },
+// }
+//
+//
+// // Reducer
+// const initState = [] as PhotoType[]
+//
+// type InitStateType = typeof initState
+//
+// const photoReducer = (state: InitStateType = initState, action: ActionsType) => {
+//     switch (action.type) {
+//         case 'PHOTO/GET-PHOTOS':
+//             return action.photos
+//
+//         default:
+//             return state
+//     }
+// }
+//
+// const getPhotosAC = (photos: PhotoType[]) => ({type: 'PHOTO/GET-PHOTOS', photos} as const)
+// type ActionsType = ReturnType<typeof getPhotosAC>
+//
+// const getPhotosTC = (): AppThunk => (dispatch) => {
+//     photosAPI.getPhotos()
+//         .then((res) => {
+//             dispatch(getPhotosAC(res.data))
+//         })
+// }
+//
+// // Store
+// const rootReducer = combineReducers({
+//     photo: photoReducer,
+// })
+//
+// const store = createStore(rootReducer)
+// type RootState = ReturnType<typeof store.getState>
+// type AppDispatch = ThunkDispatch<RootState, unknown, ActionsType>
+// type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
+// const useAppDispatch = () => useDispatch<AppDispatch>()
+// const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+//
+//
+// // Components
+// const App = () => {
+//     const dispatch = useAppDispatch()
+//     const photos = useAppSelector(state => state.photo)
+//
+//     const getPhotosHandler = () => {
+//         dispatch(getPhotosTC())
+//     };
+//
+//     return (
+//         <>
+//             <h1>📸 Фото</h1>
+//             {
+//                 photos.map(p => {
+//                     return <div key={p.id}>
+//                         <b>title</b>: {p.title}
+//                         <div><img src={p.thumbnailUrl} alt=""/></div>
+//                     </div>
+//                 })
+//             }
+//
+//             <button onClick={getPhotosHandler}>Подгрузить фотографии</button>
+//         </>
+//     )
+// }
+//
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<Provider store={store}> <App/></Provider>)
+
+// Описание:
+// При нажатии на кнопку "Подгрузить фотографии" вы должны увидеть список фотографий,
+// но ничего не подгружается.
+// Найдите и исправьте ошибку.
+// Debugger / network / console.log вам в помощь.
+// Исправленную версию строки напишите в качестве ответа.
+// Пример ответа: type InitStateType = typeof initState
+
+
+
+// import React, { useEffect } from 'react'
+// import ReactDOM from 'react-dom/client';
+// import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux'
+// import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+// import axios from 'axios';
+// import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
+//
+// // Types
+// type PostType = {
+//     body: string
+//     id: number
+//     title: string
+//     userId: number
+// }
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const postsAPI = {
+//     getPosts() {
+//         return instance.get<PostType[]>('posts?_limit=15')
+//     },
+// }
+//
+//
+// // Reducer
+// const initState = [] as PostType[]
+//
+// type InitStateType = typeof initState
+//
+// const postsReducer = (state: InitStateType = initState, action: GetPostsActionType): InitStateType => {
+//     switch (action.type) {
+//         case 'POSTS/GET-POSTS':
+//             return action.posts
+//     }
+//     return state
+// }
+//
+// const getPostsAC = (posts: PostType[]) => ({type: 'POSTS/GET-POSTS', posts} as const)
+// type GetPostsActionType = ReturnType<typeof getPostsAC>
+//
+// const getPostsTC = (): AppThunk => (dispatch) => {
+//     postsAPI.getPosts()
+//         .then((res) => {
+//             dispatch(getPostsAC(res.data))
+//         })
+// }
+//
+// // Store
+// const rootReducer = combineReducers({
+//     posts: postsReducer,
+// })
+//
+// const store = createStore(rootReducer, applyMiddleware(thunk))
+// type RootState = ReturnType<typeof store.getState>
+// type AppDispatch = ThunkDispatch<RootState, unknown, GetPostsActionType>
+// type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, GetPostsActionType>
+// const useAppDispatch = () => useDispatch<AppDispatch>()
+// const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+//
+// // App
+// const App = () => {
+//     const dispatch = useAppDispatch()
+//     const posts = useAppSelector(state => state.posts)
+//
+//     useEffect(() => {
+//         dispatch(getPostsTC)
+//     }, [])
+//
+//     return (
+//         <>
+//             <h1>📜 Список постов</h1>
+//             {
+//                 posts.length
+//                     ? posts.map(p => {
+//                         return <div key={p.id}><b>title</b>: {p.title}</div>
+//                     })
+//                     : <h2>Постов нету 😥</h2>
+//             }
+//         </>
+//     )
+// }
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<Provider store={store}> <App/></Provider>)
+
+// Описание:
+// При загрузке приложения вы должны увидеть список постов,
+// но из-за невнимательности была допущена ошибка.
+
+// Найдите и исправьте ошибку
+// Исправленную версию строки напишите в качестве ответа.
+// Пример ответа: type InitStateType = typeof initState
+
+// P.S. Эта ошибка из реальной жизни, студенты так часто ошибаются и не могут понять в чем дело.
+
+
+
+// import React, { useEffect } from 'react'
+// import ReactDOM from 'react-dom/client';
+// import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux'
+// import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
+// import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+// import axios from 'axios';
+//
+//
+// // Types
+// type PostType = {
+//     body: string
+//     id: number
+//     title: string
+//     userId: number
+// }
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const postsAPI = {
+//     getPosts() {
+//         return instance.get<PostType[]>('posts?_limit=10')
+//     },
+//     createPost() {
+//         const payload = {
+//             body: 'new post body',
+//             title: 'new post title',
+//             userId: 1
+//         }
+//         return instance.post('posts', payload)
+//     }
+// }
+//
+// // Reducer
+// const initState = [] as PostType[]
+//
+// type InitStateType = typeof initState
+//
+// const postsReducer = (state: InitStateType = initState, action: ActionsType) => {
+//     switch (action.type) {
+//         case 'POSTS/GET-POSTS':
+//             return action.posts
+//
+//         case 'POSTS/CREATE-POST':
+//             return [action.post, ...state]
+//
+//         default:
+//             return state
+//     }
+// }
+//
+//
+// const getPostsAC = (posts: PostType[]) => ({type: 'POSTS/GET-POSTS', posts} as const)
+// const createPostAC = (post: PostType) => ({type: 'POSTS/CREATE-POST', post} as const)
+//
+// type ActionsType = ReturnType<typeof getPostsAC> | ReturnType<typeof createPostAC>
+//
+// const getPostsTC = (): AppThunk => (dispatch) => {
+//     postsAPI.getPosts()
+//         .then((res) => {
+//             dispatch(getPostsAC(res.data))
+//         })
+// }
+//
+// const addPostTC = (): AppThunk => (dispatch) => {
+//     postsAPI.createPost()
+//         .then((res) => {
+//             dispatch(createPostAC(res.data))
+//         })
+// }
+//
+// // Store
+// const rootReducer = combineReducers({
+//     posts: postsReducer,
+// })
+//
+// const store = createStore(rootReducer, applyMiddleware(thunk))
+// type RootState = ReturnType<typeof store.getState>
+// type AppDispatch = ThunkDispatch<RootState, unknown, ActionsType>
+// type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
+// const useAppDispatch = () => useDispatch<AppDispatch>()
+// const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+//
+//
+// // App
+// const App = () => {
+//     const dispatch = useAppDispatch()
+//     const posts = useAppSelector(state => state.posts)
+//
+//     useEffect(() => {
+//         dispatch(getPostsTC())
+//     }, [])
+//
+//     const addPostHandler = () => {
+//         dispatch(addPostTC())
+//     };
+//
+//     return (
+//         <>
+//             <h1>📜 Список постов</h1>
+//             <button style={{marginBottom: '10px'}} onClick={addPostHandler}>Добавить пост</button>
+//             {
+//                 posts.map(p => {
+//                     return <div key={p.id}><b>title</b>: {p.title}</div>
+//                 })
+//             }
+//         </>
+//     )
+// }
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<Provider store={store}> <App/></Provider>)
+
+// Описание:
+// При нажатии на кнопку "Добавить пост" пост должен добавиться,
+// но появляется alert.
+// Вместо alerta напишите код, чтобы пост добавлялся.                                      ОТВЕТ:  dispatch(addPostTC())
+// Правильную версию строки напишите в качестве ответа.
+// Пример ответа: return instance.get<PostType[]>('posts?_limit=10')
+
+
+// import axios from 'axios'
+// import React, { useEffect } from 'react'
+// import ReactDOM from 'react-dom/client';
+// import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+// import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux';
+// import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
+//
+// // Types
+// type CommentType = {
+//     postId: number
+//     id: number
+//     name: string
+//     email: string
+//     body: string
+// }
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const commentsAPI = {
+//     getComments() {
+//         return instance.get<CommentType[]>('comments?_limit=10')
+//     }
+// }
+//
+// // Reducer
+// const initState = [] as CommentType[]
+//
+// type InitStateType = typeof initState
+//
+// const commentsReducer = (state: InitStateType = initState, action: ActionsType) => {
+//     switch (action.type) {
+//         case 'COMMENTS/GET-COMMENTS':
+//             return action.comments
+//         default:
+//             return state
+//     }
+// }
+//
+// const getCommentsAC = (comments: CommentType[]) => ({type: 'COMMENTS/GET-COMMENTS', comments} as const)
+// type ActionsType = ReturnType<typeof getCommentsAC>
+//
+// const getCommentsTC = (): ThunkAction<AppDispatch, RootState, unknown, any> => (dispatch) => {
+//     commentsAPI.getComments()
+//         .then((res) => {
+//             dispatch(getCommentsAC(res.data))
+//         })
+// }
+//
+//
+// // Store
+// const rootReducer = combineReducers({
+//     comments: commentsReducer,
+// })
+//
+// const store = createStore(rootReducer, applyMiddleware(thunk))
+// type RootState = ReturnType<typeof store.getState>
+// type AppDispatch = ThunkDispatch<RootState, unknown, ActionsType>
+// const useAppDispatch = () => useDispatch<AppDispatch>()
+// const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+//
+// // App
+// export const App = () => {
+//
+//     const comments = useAppSelector(state => state.comments)
+//     const dispatch = useAppDispatch()
+//
+//     useEffect(() => {
+//         dispatch(getCommentsTC())
+//     }, [])
+//
+//     return (
+//         <>
+//             <h1>📝 Список комментариев</h1>
+//             {
+//                 comments.map(c => {
+//                     return <div key={c.id}><b>Comment</b>: {c.body} </div>
+//                 })
+//             }
+//         </>
+//     )
+// }
+//
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<Provider store={store}> <App/></Provider>)
+
+// Описание:
+// Ваша задача стоит в том чтобы правильно передать нужные типы в дженериковый тип ThunkAction<any, any, any, any>.
+// Что нужно написать вместо any, any, any, any чтобы правильно типизировать thunk creator?
+// Ответ дайте через пробел
+// Пример ответа: unknown status isDone void
+
+
+
+// import axios from 'axios'
+// import React, { useEffect } from 'react'
+// import ReactDOM from 'react-dom/client';
+// import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+// import {AnyAction, applyMiddleware, combineReducers, legacy_createStore as createStore} from 'redux';
+// import thunk, { ThunkDispatch } from 'redux-thunk';
+//
+// // Types
+// type CommentType = {
+//     postId: number
+//     id: number
+//     name: string
+//     email: string
+//     body: string
+// }
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const commentsAPI = {
+//     getComments() {
+//         return instance.get<CommentType[]>('comments?_limit=10')
+//     }
+// }
+//
+// // Reducer
+// const initState = [] as CommentType[]
+//
+// type InitStateType = typeof initState
+//
+// const commentsReducer = (state: InitStateType = initState, action: ActionsType) => {
+//     switch (action.type) {
+//         case 'COMMENTS/GET-COMMENTS':
+//             return action.comments
+//     }
+//     return state
+// }
+//
+// const getCommentsAC = (comments: CommentType[]) => ({type: 'COMMENTS/GET-COMMENTS', comments} as const)
+// type ActionsType = ReturnType<typeof getCommentsAC>
+//
+// const getCommentsTC = () => (dispatch: DispatchType) => {
+//     commentsAPI.getComments()
+//         .then((res) => {
+//             dispatch(getCommentsAC(res.data))
+//         })
+// }
+//
+//
+// // Store
+// const rootReducer = combineReducers({
+//     comments: commentsReducer,
+// })
+//
+// const store = createStore(rootReducer, applyMiddleware(thunk))
+// type RootState = ReturnType<typeof rootReducer>
+// type DispatchType = ThunkDispatch<RootState, unknown, AnyAction>
+// const useAppDispatch = () => useDispatch<DispatchType>()
+// const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+//
+// // App
+// export const App = () => {
+//
+//     const comments = useAppSelector(state => state.comments)
+//     const dispatch = useAppDispatch()
+//
+//     useEffect(() => {
+//         dispatch(getCommentsTC())
+//     }, [])
+//
+//     return (
+//         <>
+//             <h1>📝 Список комментариев</h1>
+//             {
+//                 comments.map(c => {
+//                     return <div key={c.id}><b>Comment</b>: {c.body} </div>
+//                 })
+//             }
+//         </>
+//     )
+// }
+//
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<Provider store={store}> <App/></Provider>)
+
+// Описание:
+// Ваша задача стоит в том чтобы правильно передать нужные типы в дженериковый тип ThunkDispatch<any, any, any>.
+// Что нужно написать вместо any, any, any чтобы правильно типизировать dispatch ?
+// Ответ дайте через пробел
+// Пример ответа: unknown status isDone
+
+
+
+import React, { useEffect } from 'react'
+import ReactDOM from 'react-dom/client';
+import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux'
+import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
+import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+import axios from 'axios';
+
+// Types
+type PostType = {
+    body: string
+    id: number
+    title: string
+    userId: number
+}
+
+// Api
+const instance = axios.create({
+    baseURL: 'https://jsonplaceholder.typicode.com/'
+})
+
+const postsAPI = {
+    getPosts() {
+        return instance.get<PostType[]>('posts?_limit=15')
+    },
+    updatePostTitle(post: PostType) {
+        return instance.put<PostType>(`posts/${post.id}`, post)
+    }
+}
+
+
+// Reducer
+const initState = [] as PostType[]
+
+type InitStateType = typeof initState
+
+const postsReducer = (state: InitStateType = initState, action: ActionsType) => {
+    switch (action.type) {
+        case 'POSTS/GET-POSTS':
+            return action.posts
+
+        case 'POSTS/UPDATE-POST-TITLE':
+            return state.map((p) => {
+                if (p.id === action.post.id) {
+                    return {...p, title: action.post.title}
+                } else {
+                    return p
+                }
+            })
+
+        default:
+            return state
+    }
+}
+
+const getPostsAC = (posts: PostType[]) => ({type: 'POSTS/GET-POSTS', posts} as const)
+const updatePostTitleAC = (post: PostType) => ({type: 'POSTS/UPDATE-POST-TITLE', post} as const)
+type ActionsType = ReturnType<typeof getPostsAC> | ReturnType<typeof updatePostTitleAC>
+
+const getPostsTC = (): AppThunk => (dispatch) => {
+    postsAPI.getPosts()
+        .then((res) => {
+            dispatch(getPostsAC(res.data))
+        })
+}
+
+const updatePostTC = (postId: number): AppThunk => (dispatch, getState: () => RootState) => {
+    try {
+        const currentPost = getState().find((p: PostType) => p.id === postId)
+
+        if (currentPost) {
+            const payload = {...currentPost, title: 'Летим 🚀'}
+            postsAPI.updatePostTitle(payload)
+                .then((res) => {
+                    dispatch(updatePostTitleAC(res.data))
+                })
+        }
+    } catch (e) {
+        alert('Обновить пост не удалось 😢')
+    }
+
+}
+
+// Store
+const rootReducer = combineReducers({
+    posts: postsReducer,
+})
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
+type RootState = ReturnType<typeof store.getState>
+type AppDispatch = ThunkDispatch<RootState, unknown, ActionsType>
+type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
+const useAppDispatch = () => useDispatch<AppDispatch>()
+const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+
+// App
+const App = () => {
+    const dispatch = useAppDispatch()
+    const posts = useAppSelector(state => state.posts)
+
+    useEffect(() => {
+        dispatch(getPostsTC())
+    }, [])
+
+    const updatePostHandler = (postId: number) => {
+        dispatch(updatePostTC(postId))
+    }
+
+    return (
+        <>
+            <h1>📜 Список постов</h1>
+            {
+                posts.map(p => {
+                    return <div key={p.id}>
+                        <b>title</b>: {p.title}
+                        <button onClick={() => updatePostHandler(p.id)}>Обновить пост</button>
+                    </div>
+                })
+            }
+        </>
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+root.render(<Provider store={store}> <App/></Provider>)
+
+// Описание:
+// Попробуйте обновить пост и вы увидите alert с ошибкой.
+// Debugger / network / console.log вам в помощь
+// Найдите ошибку и вставьте исправленную строку кода в качестве ответа.
+// Пример ответа: const payload = {...currentPost, tile: 'Летим 🚀'}
+// Подсказка. Избавьтесь от всех any и решение придет само собой 😉
