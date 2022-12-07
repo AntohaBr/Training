@@ -4157,7 +4157,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //
 // type InitStateType = typeof initState
 //
-// const todosReducer = (state: InitStateType = initState, action: ActionsType) => {
+// const todosReducer = (state: InitStateType = initState, action: ActionsType):InitStateType => {
 //     switch (action.type) {
 //         case 'TODOS/GET-TODOS':
 //             return action.todos
@@ -4213,7 +4213,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //     const todos = useAppSelector(state => state.todos)
 //
 //     useEffect(() => {
-//         getPostsTC()
+//         dispatch(getPostsTC())
 //     }, [])
 //
 //     const changeStatusHandler = (id: number, completed: boolean) => {
@@ -4247,7 +4247,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // root.render(<Provider store={store}> <App/></Provider>)
 
 // Описание:
-// При загрузке приложения вы должны увидеть список тудулистов,
+// При загрузке приложения вы должны увидеть список тудулистов,                                 ОТВЕТ: dispatch(getPostsTC())
 // но из-за невнимательности была допущена ошибка.
 // Найдите и исправьте ошибку.
 // Исправленную версию строки напишите в качестве ответа.
@@ -4257,7 +4257,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 
 // import React from 'react'
 // import ReactDOM from 'react-dom/client';
-// import { combineReducers, legacy_createStore as createStore } from 'redux'
+// import {applyMiddleware, combineReducers, legacy_createStore as createStore} from 'redux'
 // import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 // import axios from 'axios';
 // import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
@@ -4313,7 +4313,8 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //     photo: photoReducer,
 // })
 //
-// const store = createStore(rootReducer)
+//
+// const store = createStore(rootReducer, applyMiddleware(thunk))
 // type RootState = ReturnType<typeof store.getState>
 // type AppDispatch = ThunkDispatch<RootState, unknown, ActionsType>
 // type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
@@ -4351,7 +4352,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 // root.render(<Provider store={store}> <App/></Provider>)
 
-// Описание:
+// Описание:                                                           ОТВЕТ: const store = createStore(rootReducer, applyMiddleware(thunk))
 // При нажатии на кнопку "Подгрузить фотографии" вы должны увидеть список фотографий,
 // но ничего не подгружается.
 // Найдите и исправьте ошибку.
@@ -4429,7 +4430,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //     const posts = useAppSelector(state => state.posts)
 //
 //     useEffect(() => {
-//         dispatch(getPostsTC)
+//         dispatch(getPostsTC())
 //     }, [])
 //
 //     return (
@@ -4450,7 +4451,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // root.render(<Provider store={store}> <App/></Provider>)
 
 // Описание:
-// При загрузке приложения вы должны увидеть список постов,
+// При загрузке приложения вы должны увидеть список постов,                            ОТВЕT: dispatch(getPostsTC())
 // но из-за невнимательности была допущена ошибка.
 
 // Найдите и исправьте ошибку
@@ -4588,7 +4589,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // import React, { useEffect } from 'react'
 // import ReactDOM from 'react-dom/client';
 // import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-// import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux';
+// import {AnyAction, applyMiddleware, combineReducers, legacy_createStore as createStore} from 'redux';
 // import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
 //
 // // Types
@@ -4628,7 +4629,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // const getCommentsAC = (comments: CommentType[]) => ({type: 'COMMENTS/GET-COMMENTS', comments} as const)
 // type ActionsType = ReturnType<typeof getCommentsAC>
 //
-// const getCommentsTC = (): ThunkAction<AppDispatch, RootState, unknown, any> => (dispatch) => {
+// const getCommentsTC = (): ThunkAction<void, RootState, unknown, ActionsType> => (dispatch) => {
 //     commentsAPI.getComments()
 //         .then((res) => {
 //             dispatch(getCommentsAC(res.data))
@@ -4676,7 +4677,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Описание:
 // Ваша задача стоит в том чтобы правильно передать нужные типы в дженериковый тип ThunkAction<any, any, any, any>.
 // Что нужно написать вместо any, any, any, any чтобы правильно типизировать thunk creator?
-// Ответ дайте через пробел
+// Ответ дайте через пробел                                            ОТВЕТ: void RootState unknown ActionsType
 // Пример ответа: unknown status isDone void
 
 
@@ -4739,7 +4740,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //
 // const store = createStore(rootReducer, applyMiddleware(thunk))
 // type RootState = ReturnType<typeof rootReducer>
-// type DispatchType = ThunkDispatch<RootState, unknown, AnyAction>
+// type DispatchType = ThunkDispatch<RootState, unknown, ActionsType>
 // const useAppDispatch = () => useDispatch<DispatchType>()
 // const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 //
@@ -4768,139 +4769,139 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //
 // const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 // root.render(<Provider store={store}> <App/></Provider>)
-
+//
 // Описание:
 // Ваша задача стоит в том чтобы правильно передать нужные типы в дженериковый тип ThunkDispatch<any, any, any>.
 // Что нужно написать вместо any, any, any чтобы правильно типизировать dispatch ?
 // Ответ дайте через пробел
-// Пример ответа: unknown status isDone
+// Пример ответа: unknown status isDone                                                ОТВЕT: RootState unknown ActionsType
 
 
 
-import React, { useEffect } from 'react'
-import ReactDOM from 'react-dom/client';
-import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux'
-import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
-import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
-import axios from 'axios';
-
-// Types
-type PostType = {
-    body: string
-    id: number
-    title: string
-    userId: number
-}
-
-// Api
-const instance = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com/'
-})
-
-const postsAPI = {
-    getPosts() {
-        return instance.get<PostType[]>('posts?_limit=15')
-    },
-    updatePostTitle(post: PostType) {
-        return instance.put<PostType>(`posts/${post.id}`, post)
-    }
-}
-
-
-// Reducer
-const initState = [] as PostType[]
-
-type InitStateType = typeof initState
-
-const postsReducer = (state: InitStateType = initState, action: ActionsType) => {
-    switch (action.type) {
-        case 'POSTS/GET-POSTS':
-            return action.posts
-
-        case 'POSTS/UPDATE-POST-TITLE':
-            return state.map((p) => {
-                if (p.id === action.post.id) {
-                    return {...p, title: action.post.title}
-                } else {
-                    return p
-                }
-            })
-
-        default:
-            return state
-    }
-}
-
-const getPostsAC = (posts: PostType[]) => ({type: 'POSTS/GET-POSTS', posts} as const)
-const updatePostTitleAC = (post: PostType) => ({type: 'POSTS/UPDATE-POST-TITLE', post} as const)
-type ActionsType = ReturnType<typeof getPostsAC> | ReturnType<typeof updatePostTitleAC>
-
-const getPostsTC = (): AppThunk => (dispatch) => {
-    postsAPI.getPosts()
-        .then((res) => {
-            dispatch(getPostsAC(res.data))
-        })
-}
-
-const updatePostTC = (postId: number): AppThunk => (dispatch, getState: () => RootState) => {
-    try {
-        const currentPost = getState().find((p: PostType) => p.id === postId)
-
-        if (currentPost) {
-            const payload = {...currentPost, title: 'Летим 🚀'}
-            postsAPI.updatePostTitle(payload)
-                .then((res) => {
-                    dispatch(updatePostTitleAC(res.data))
-                })
-        }
-    } catch (e) {
-        alert('Обновить пост не удалось 😢')
-    }
-
-}
-
-// Store
-const rootReducer = combineReducers({
-    posts: postsReducer,
-})
-
-const store = createStore(rootReducer, applyMiddleware(thunk))
-type RootState = ReturnType<typeof store.getState>
-type AppDispatch = ThunkDispatch<RootState, unknown, ActionsType>
-type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
-const useAppDispatch = () => useDispatch<AppDispatch>()
-const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
-
-// App
-const App = () => {
-    const dispatch = useAppDispatch()
-    const posts = useAppSelector(state => state.posts)
-
-    useEffect(() => {
-        dispatch(getPostsTC())
-    }, [])
-
-    const updatePostHandler = (postId: number) => {
-        dispatch(updatePostTC(postId))
-    }
-
-    return (
-        <>
-            <h1>📜 Список постов</h1>
-            {
-                posts.map(p => {
-                    return <div key={p.id}>
-                        <b>title</b>: {p.title}
-                        <button onClick={() => updatePostHandler(p.id)}>Обновить пост</button>
-                    </div>
-                })
-            }
-        </>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-root.render(<Provider store={store}> <App/></Provider>)
+// import React, { useEffect } from 'react'
+// import ReactDOM from 'react-dom/client';
+// import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux'
+// import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
+// import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+// import axios from 'axios';
+//
+// // Types
+// type PostType = {
+//     body: string
+//     id: number
+//     title: string
+//     userId: number
+// }
+//
+// // Api
+// const instance = axios.create({
+//     baseURL: 'https://jsonplaceholder.typicode.com/'
+// })
+//
+// const postsAPI = {
+//     getPosts() {
+//         return instance.get<PostType[]>('posts?_limit=15')
+//     },
+//     updatePostTitle(post: PostType) {
+//         return instance.put<PostType>(`posts/${post.id}`, post)
+//     }
+// }
+//
+//
+// // Reducer
+// const initState = [] as PostType[]
+//
+// type InitStateType = typeof initState
+//
+// const postsReducer = (state: InitStateType = initState, action: ActionsType) => {
+//     switch (action.type) {
+//         case 'POSTS/GET-POSTS':
+//             return action.posts
+//
+//         case 'POSTS/UPDATE-POST-TITLE':
+//             return state.map((p) => {
+//                 if (p.id === action.post.id) {
+//                     return {...p, title: action.post.title}
+//                 } else {
+//                     return p
+//                 }
+//             })
+//
+//         default:
+//             return state
+//     }
+// }
+//
+// const getPostsAC = (posts: PostType[]) => ({type: 'POSTS/GET-POSTS', posts} as const)
+// const updatePostTitleAC = (post: PostType) => ({type: 'POSTS/UPDATE-POST-TITLE', post} as const)
+// type ActionsType = ReturnType<typeof getPostsAC> | ReturnType<typeof updatePostTitleAC>
+//
+// const getPostsTC = (): AppThunk => (dispatch) => {
+//     postsAPI.getPosts()
+//         .then((res) => {
+//             dispatch(getPostsAC(res.data))
+//         })
+// }
+//
+// const updatePostTC = (postId: number): AppThunk => (dispatch, getState: () => RootState) => {
+//     try {
+//         const currentPost = getState().find((p: PostType) => p.id === postId)
+//
+//         if (currentPost) {
+//             const payload = {...currentPost, title: 'Летим 🚀'}
+//             postsAPI.updatePostTitle(payload)
+//                 .then((res) => {
+//                     dispatch(updatePostTitleAC(res.data))
+//                 })
+//         }
+//     } catch (e) {
+//         alert('Обновить пост не удалось 😢')
+//     }
+//
+// }
+//
+// // Store
+// const rootReducer = combineReducers({
+//     posts: postsReducer,
+// })
+//
+// const store = createStore(rootReducer, applyMiddleware(thunk))
+// type RootState = ReturnType<typeof store.getState>
+// type AppDispatch = ThunkDispatch<RootState, unknown, ActionsType>
+// type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
+// const useAppDispatch = () => useDispatch<AppDispatch>()
+// const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+//
+// // App
+// const App = () => {
+//     const dispatch = useAppDispatch()
+//     const posts = useAppSelector(state => state.posts)
+//
+//     useEffect(() => {
+//         dispatch(getPostsTC())
+//     }, [])
+//
+//     const updatePostHandler = (postId: number) => {
+//         dispatch(updatePostTC(postId))
+//     }
+//
+//     return (
+//         <>
+//             <h1>📜 Список постов</h1>
+//             {
+//                 posts.map(p => {
+//                     return <div key={p.id}>
+//                         <b>title</b>: {p.title}
+//                         <button onClick={() => updatePostHandler(p.id)}>Обновить пост</button>
+//                     </div>
+//                 })
+//             }
+//         </>
+//     )
+// }
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<Provider store={store}> <App/></Provider>)
 
 // Описание:
 // Попробуйте обновить пост и вы увидите alert с ошибкой.
