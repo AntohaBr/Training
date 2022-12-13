@@ -26,7 +26,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Projects/cards1",
+    "last_opened_file_path": "D:/Projects/todolist",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
@@ -51,8 +51,19 @@
       <workItem from="1667558252953" duration="4171000" />
       <workItem from="1667573508282" duration="1657000" />
       <workItem from="1667622081692" duration="2809000" />
-      <workItem from="1670402851015" duration="8888000" />
+      <workItem from="1670402851015" duration="8912000" />
+      <workItem from="1670912301347" duration="4884000" />
+      <workItem from="1670917669198" duration="994000" />
+      <workItem from="1670918687790" duration="6126000" />
     </task>
+    <task id="LOCAL-00001" summary="thunk-3">
+      <created>1670413523394</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670413523394</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -60,6 +71,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="thunk-2" />
-    <option name="LAST_COMMIT_MESSAGE" value="thunk-2" />
+    <MESSAGE value="thunk-3" />
+    <option name="LAST_COMMIT_MESSAGE" value="thunk-3" />
   </component>
 </project>
