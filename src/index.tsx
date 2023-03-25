@@ -3429,6 +3429,9 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 
 // Пример ответа: id status isDone                                                      ОТВЕТ: title completed
 
+
+
+
 //
 // import axios from 'axios'
 // import React, {useEffect, useState} from 'react'
@@ -3592,6 +3595,8 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Типизацию возвращаемых данных в ответе указывать необязательно, но можно и указать (в ответах учтены оба варианта).
 // Исправленную версию строки напишите в качестве ответа.
 // Пример ответа: return Promise.resolve<PostType[]>(data)                   ОТВЕТ: return instance.post('comments',payload)
+
+
 
 
 // import axios from 'axios'
@@ -3758,78 +3763,78 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Пример ответа: photosAPI.updatePhotoTitle(id, title)
 
 
-// import axios from 'axios'
-// import React, { useEffect, useState } from 'react'
-// import ReactDOM from 'react-dom/client'
-//
-// type UserType = {
-//     id: string;
-//     name: string;
-//     age: number;
-// }
-//
-// // API
-// const instance = axios.create({baseURL: 'https://exams-frontend.kimitsu.it-incubator.ru/api/'})
-//
-// const api = {
-//     getUsers(pageNumber: number) {
-//         return instance.get(`users?pageSize=${3}&pageNumber=${pageNumber}`)
-//     },
-// }
-//
-// // App
-// const buttons = [
-//     {id: 1, title: '1'},
-//     {id: 2, title: '2'},
-//     {id: 3, title: '3'},
-// ]
-//
-// export const App = () => {
-//
-//     const [users, setUsers] = useState<UserType[]>([])
-//     const [currentPage, setCurrentPage] = useState(1)
-//
-//     useEffect(() => {
-//         api.getUsers(currentPage)
-//             .then((res: any) => {
-//                 setUsers(res.data.items)
-//             })
-//     }, [currentPage])
-//
-//     const setPageHandler = (page: number) => {
-//         setCurrentPage(page)
-//     };
-//
-//     return (
-//         <>
-//             <h1>👪 Список пользователей</h1>
-//             {
-//                 users.map(u => {
-//                     return <div style={{marginBottom: '25px'}} key={u.id}>
-//                         <p><b>name</b>: {u.name}</p>
-//                         <p><b>age</b>: {u.age}</p>
-//                     </div>
-//                 })
-//             }
-//
-//             {
-//                 buttons.map(b => {
-//                     return (
-//                         <button key={b.id}
-//                                 style={b.id === currentPage ? {backgroundColor: 'lightblue'} : {}}
-//                                 onClick={() => setPageHandler(b.id)}>
-//                             {b.title}
-//                         </button>
-//                     )
-//                 })
-//             }
-//         </>
-//     )
-// }
-//
-//
-// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-// root.render(<App/>)
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import ReactDOM from 'react-dom/client'
+
+type UserType = {
+    id: string;
+    name: string;
+    age: number;
+}
+
+// API
+const instance = axios.create({baseURL: 'https://exams-frontend.kimitsu.it-incubator.ru/api/'})
+
+const api = {
+    getUsers(pageNumber: number) {
+        return instance.get(`users?pageSize=${3}&pageNumber=${pageNumber}`)
+    },
+}
+
+// App
+const buttons = [
+    {id: 1, title: '1'},
+    {id: 2, title: '2'},
+    {id: 3, title: '3'},
+]
+
+export const App = () => {
+
+    const [users, setUsers] = useState<UserType[]>([])
+    const [currentPage, setCurrentPage] = useState(1)
+
+    useEffect(() => {
+        api.getUsers(currentPage)
+            .then((res: any) => {
+                setUsers(res.data.items)
+            })
+    }, [currentPage])
+
+    const setPageHandler = (page: number) => {
+        setCurrentPage(page)
+    };
+
+    return (
+        <>
+            <h1>👪 Список пользователей</h1>
+            {
+                users.map(u => {
+                    return <div style={{marginBottom: '25px'}} key={u.id}>
+                        <p><b>name</b>: {u.name}</p>
+                        <p><b>age</b>: {u.age}</p>
+                    </div>
+                })
+            }
+
+            {
+                buttons.map(b => {
+                    return (
+                        <button key={b.id}
+                                style={b.id === currentPage ? {backgroundColor: 'lightblue'} : {}}
+                                onClick={() => setPageHandler(b.id)}>
+                            {b.title}
+                        </button>
+                    )
+                })
+            }
+        </>
+    )
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+root.render(<App/>)
 
 // 📜 Описание:                                                                  return instance.get(`users?pageSize=${3}&pageNumber=${pageNumber}`)
 // При переходе по страницам должны подгружаться новые пользователи.
@@ -3928,7 +3933,9 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // При переходе по страницам, контент (описание и изображение фоток) должен меняться.
 // Подсказка. В одной строке кода допущено 2 ошибки.
 // Задача: найти эти ошибки, и исправленную версию строки написать в качестве ответа.
-// Пример ответа: const [currentPage, setCurrentPage] = useState(page)
+// Пример ответа: const [currentPage, setCurrentPage] = useState(page)                           ОТВЕТ const [photos, setPhotos] = useState<PhotoType[]>([])
+
+
 
 
 // import axios from 'axios'
@@ -3998,7 +4005,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Студент по неопытности допустил одну маленькую ошибку, но из-за нее он не может вывести на экран тудулист.
 // Найдите ошибку и вставьте исправленную версию строки кода в качестве ответа
 // Пример ответа:  'https://jsonplaceholder.typicode.com/todos'
-//                                                                                                 ОТВЕТ:   'todos/${todoId}'
+//                                                                                                 ОТВЕТ: return instance.get<TodoType>(`todos/${todoId}`)
 // P.S. Эта ошибка из реальной жизни, студенты часто ошибаются и не могут понять в чем дело.
 
 
@@ -4066,12 +4073,12 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 // root.render(<App/>)
 
-// 📜 Описание:                               return instance.get<TodoType>(`todos/${todoId}`)
+// 📜 Описание:
 // Студент по неопытности допустил одну маленькую ошибку, но из-за нее он не может вывести на экран тудулист.
 // Найдите ошибку и вставьте исправленную версию строки кода в качестве ответа
 // P.S. Эта ошибка из реальной жизни, студенты часто ошибаются подобным образом и не могут понять в чем дело.
 
-// 🖥 Пример ответа:  .then((res: any) => setTodo(res.data.data))
+// 🖥 Пример ответа:  .then((res: any) => setTodo(res.data.data))                                          ОТВЕТ return instance.get<TodoType>(`todos/${todoId}`)
 
 
 
@@ -4095,7 +4102,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //     pantone_value: string
 //     year: number
 // }
-
+//
 // type UsersResponseType = {
 //     total: number
 //     total_pages: number
@@ -4108,7 +4115,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //     url: string
 //     data: UserType[]
 // }
-
+//
 // type ColorsResponseType = {
 //     total: number
 //     total_pages: number
@@ -4121,7 +4128,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //     url: string
 //     data: ColorType[]
 // }
-
+//
 // type CommonResponseType <T> = {
 //     total: number
 //     total_pages: number
@@ -4246,6 +4253,11 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //     }
 
 
+
+
+
+
+
 // import axios from 'axios'
 // import React, { useEffect, useState } from 'react'
 // import ReactDOM from 'react-dom/client';
@@ -4283,35 +4295,21 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //
 // type CommonResponseType <T> = {
 //     total: number
-//     messages:[]
+//     messages:string []
 //     page: number
 //     pageCount:number
 //     data: T
 // }
-
-//     type CommonResponseType <T> = {
-//         total: number
-//         total_pages: number
-//         page: number
-//         per_page: number
-//         support: {
-//             url: string
-//             text: string
-//         }
-//         url: string
-//         data: T
-//     }
-
-
-// Api
+//
+// //Api
 // const instance = axios.create({baseURL: 'https://exams-frontend.kimitsu.it-incubator.ru/api/'})
 //
 // const api = {
 //     getProducts() {
-//         return instance.get<ProductsResponseType>('products')
+//         return instance.get<CommonResponseType<ProductType[]>>('products')
 //     },
 //     getFilms() {
-//         return instance.get<FilmsResponseType>('films')
+//         return instance.get<CommonResponseType<FilmType[]>>('films')
 //     }
 // }
 //
@@ -4409,9 +4407,15 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // }
 
 
+// ОТВЕТ
 
-
-
+// type CommonResponseType <T> = {
+//     total: number
+//     messages: string[]
+//     page: number
+//     pageCount: number
+//     data: T
+// }
 
 
 
@@ -4449,6 +4453,10 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Описание:
 // Вместо XXX и YYY через пробел напишите параметры которые приходят в санку.
 // Пример ответа: useCallback state                                                      ОТВЕТ: dispatch getState
+
+
+
+
 
 
 // import React, { useEffect } from 'react'
@@ -4576,11 +4584,15 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // root.render(<Provider store={store}> <App/></Provider>)
 
 // Описание:
-// При загрузке приложения вы должны увидеть список тудулистов,                                 ОТВЕТ: dispatch(getPostsTC())
+// При загрузке приложения вы должны увидеть список тудулистов,
 // но из-за невнимательности была допущена ошибка.
 // Найдите и исправьте ошибку.
 // Исправленную версию строки напишите в качестве ответа.
-// Пример ответа: type InitStateType = typeof initState
+// Пример ответа: type InitStateType = typeof initState                                       ОТВЕТ: dispatch(getPostsTC())
+
+
+
+
 
 
 // import React from 'react'
@@ -4680,13 +4692,17 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 // root.render(<Provider store={store}> <App/></Provider>)
 
-// Описание:                                                           ОТВЕТ: const store = createStore(rootReducer, applyMiddleware(thunk))
+// Описание:
 // При нажатии на кнопку "Подгрузить фотографии" вы должны увидеть список фотографий,
 // но ничего не подгружается.
 // Найдите и исправьте ошибку.
 // Debugger / network / console.log вам в помощь.
 // Исправленную версию строки напишите в качестве ответа.
-// Пример ответа: type InitStateType = typeof initState
+// Пример ответа: type InitStateType = typeof initState                                        ОТВЕТ: const store = createStore(rootReducer, applyMiddleware(thunk))
+
+
+
+
 
 
 // import React, { useEffect } from 'react'
@@ -4778,14 +4794,21 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // root.render(<Provider store={store}> <App/></Provider>)
 
 // Описание:
-// При загрузке приложения вы должны увидеть список постов,                            ОТВЕT: dispatch(getPostsTC())
+// При загрузке приложения вы должны увидеть список постов,
 // но из-за невнимательности была допущена ошибка.
 
 // Найдите и исправьте ошибку
 // Исправленную версию строки напишите в качестве ответа.
 // Пример ответа: type InitStateType = typeof initState
 
-// P.S. Эта ошибка из реальной жизни, студенты так часто ошибаются и не могут понять в чем дело.
+// P.S. Эта ошибка из реальной жизни, студенты так часто ошибаются и не могут понять в чем дело.                ОТВЕT: dispatch(getPostsTC())
+
+
+
+
+
+
+
 
 
 // import React, { useEffect } from 'react'
@@ -4906,9 +4929,12 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Описание:
 // При нажатии на кнопку "Добавить пост" пост должен добавиться,
 // но появляется alert.
-// Вместо alerta напишите код, чтобы пост добавлялся.                                      ОТВЕТ:  dispatch(addPostTC())
+// Вместо alerta напишите код, чтобы пост добавлялся.
 // Правильную версию строки напишите в качестве ответа.
-// Пример ответа: return instance.get<PostType[]>('posts?_limit=10')
+// Пример ответа: return instance.get<PostType[]>('posts?_limit=10')                                   ОТВЕТ:  dispatch(addPostTC())
+
+
+
 
 
 // import axios from 'axios'
@@ -5003,8 +5029,11 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Описание:
 // Ваша задача стоит в том чтобы правильно передать нужные типы в дженериковый тип ThunkAction<any, any, any, any>.
 // Что нужно написать вместо any, any, any, any чтобы правильно типизировать thunk creator?
-// Ответ дайте через пробел                                            ОТВЕТ: void RootState unknown ActionsType
-// Пример ответа: unknown status isDone void
+// Ответ дайте через пробел
+// Пример ответа: unknown status isDone void                                                ОТВЕТ: void RootState unknown ActionsType
+
+
+
 
 
 // import axios from 'axios'
@@ -5102,6 +5131,8 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Пример ответа: unknown status isDone                                                ОТВЕT: RootState unknown ActionsType
 
 
+
+
 // import React, { useEffect } from 'react'
 // import ReactDOM from 'react-dom/client';
 // import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux'
@@ -5112,7 +5143,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // // Types
 // type PostType = {
 //     body: string
-//     id: number
+//     id: string
 //     title: string
 //     userId: number
 // }
@@ -5167,9 +5198,9 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //         })
 // }
 //
-// const updatePostTC = (postId: string): AppThunk => (dispatch, getState: any) => {
+// const updatePostTC = (postId: string): AppThunk => (dispatch, getState: () => AppRootStateType) => {
 //     try {
-//         const currentPost = getState().find((p: PostType) => p.id === postId)
+//         const currentPost = getState().posts.find((p: PostType) => p.id === postId)
 //
 //         if (currentPost) {
 //             const payload = {...currentPost, title: 'Летим 🚀'}
@@ -5188,6 +5219,9 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // const rootReducer = combineReducers({
 //     posts: postsReducer,
 // })
+//
+// type RootReducerType = typeof rootReducer
+// export type AppRootStateType = ReturnType<RootReducerType>
 //
 // const store = createStore(rootReducer, applyMiddleware(thunk))
 // type RootState = ReturnType<typeof store.getState>
@@ -5233,6 +5267,10 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Найдите ошибку и вставьте исправленную строку кода в качестве ответа.
 // Пример ответа: const payload = {...currentPost, tile: 'Летим 🚀'}
 // Подсказка. Избавьтесь от всех any и решение придет само собой 😉
+
+                                                                          // ОТВЕТ: const currentPost = getState().posts.find((p: PostType) => p.id === postId)
+
+
 
 
 // import React, { useEffect } from 'react'
@@ -5304,10 +5342,10 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //         })
 // }
 //
-// const updatePostTC = (postId: string): AppThunk => (dispatch, getState: any) => {
-//     try {
-//         const currentPost = getState().find((p: PostType) => p.id === postId)
+// const updatePostTC = (postId: string): AppThunk => (dispatch, getState: () => AppRootStateType) => {
 //
+//     try {
+//         const currentPost = getState().posts.find((p: PostType) => p.id === postId)
 //         if (currentPost) {
 //             const payload = {title: 'Это просто заглушка. Backend сам сгенерирует новый title'}
 //             postsAPI.updatePostTitle(postId, payload)
@@ -5325,6 +5363,10 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // const rootReducer = combineReducers({
 //     posts: postsReducer,
 // })
+//
+// type RootReducerType = typeof rootReducer
+// export type AppRootStateType = ReturnType<RootReducerType>
+//
 //
 // const store = createStore(rootReducer, applyMiddleware(thunk))
 // type RootState = ReturnType<typeof store.getState>
@@ -5368,12 +5410,12 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Попробуйте обновить пост и вы увидите alert с ошибкой.
 // Debugger / network / console.log вам в помощь
 // Найдите ошибку и вставьте исправленную строку кода в качестве ответа.
-
+//                                                                                  ОТВЕТ: const currentPost = getState().posts.find((p: PostType) => p.id === postId)
 // 🖥 Пример ответа: const payload = {...currentPost, tile: 'Летим 🚀'}
 
 
 // _________________________________________________________________________________________________________________
-//                                                         ВТОРНИК ЭКЗАМЕН 3
+//                                                         ЧЕТВЕРГ ЭКЗАМЕН 3
 
 
 // import React from 'react'
