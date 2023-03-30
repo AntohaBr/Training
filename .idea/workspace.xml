@@ -10,6 +10,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -26,7 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/IT/training",
+    "last_opened_file_path": "D:/IT/Native-JS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
@@ -56,7 +63,14 @@
       <workItem from="1670917669198" duration="994000" />
       <workItem from="1670918687790" duration="9525000" />
       <workItem from="1670930302460" duration="8000" />
-      <workItem from="1679732762310" duration="7417000" />
+      <workItem from="1679732762310" duration="7438000" />
+      <workItem from="1679743059744" duration="21000" />
+      <workItem from="1680015257604" duration="6091000" />
+      <workItem from="1680070726444" duration="594000" />
+      <workItem from="1680078515341" duration="58000" />
+      <workItem from="1680082149416" duration="594000" />
+      <workItem from="1680152511757" duration="4070000" />
+      <workItem from="1680175588271" duration="4112000" />
     </task>
     <task id="LOCAL-00001" summary="thunk-3">
       <created>1670413523394</created>
@@ -79,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670926208205</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="thunk-4/2">
+      <created>1679740430349</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679740430349</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +111,7 @@
     <MESSAGE value="thunk-3" />
     <MESSAGE value="thunk-4" />
     <MESSAGE value="thunk-4/1" />
-    <option name="LAST_COMMIT_MESSAGE" value="thunk-4/1" />
+    <MESSAGE value="thunk-4/2" />
+    <option name="LAST_COMMIT_MESSAGE" value="thunk-4/2" />
   </component>
 </project>
