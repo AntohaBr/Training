@@ -3430,8 +3430,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Пример ответа: id status isDone                                                      ОТВЕТ: title completed
 
 
-
-
 //
 // import axios from 'axios'
 // import React, {useEffect, useState} from 'react'
@@ -3597,8 +3595,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Пример ответа: return Promise.resolve<PostType[]>(data)                   ОТВЕТ: return instance.post('comments',payload)
 
 
-
-
 // import axios from 'axios'
 // import React, { useEffect, useState } from 'react'
 // import ReactDOM from 'react-dom/client';
@@ -3673,9 +3669,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Почему не удаляется post при нажатии на кнопку удаления (х) ?
 // Найдите ошибку и вставьте исправленную строку кода в качестве ответа
 // Пример ответа: return instance.put('posts/1')
-
-
-
 
 
 // import axios from 'axios'
@@ -3843,8 +3836,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // 🖥 Пример ответа: const [currentPage, setCurrentPage] = useState(page)
 
 
-
-
 // import axios from 'axios'
 // import React, { useEffect, useState } from 'react'
 // import ReactDOM from 'react-dom/client'
@@ -3936,8 +3927,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Пример ответа: const [currentPage, setCurrentPage] = useState(page)                           ОТВЕТ const [photos, setPhotos] = useState<PhotoType[]>([])
 
 
-
-
 // import axios from 'axios'
 // import React, { useEffect, useState } from 'react'
 // import ReactDOM from 'react-dom/client';
@@ -4009,7 +3998,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // P.S. Эта ошибка из реальной жизни, студенты часто ошибаются и не могут понять в чем дело.
 
 
-
 // import axios from 'axios'
 // import React, { useEffect, useState } from 'react'
 // import ReactDOM from 'react-dom/client';
@@ -4079,7 +4067,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // P.S. Эта ошибка из реальной жизни, студенты часто ошибаются подобным образом и не могут понять в чем дело.
 
 // 🖥 Пример ответа:  .then((res: any) => setTodo(res.data.data))                                          ОТВЕТ return instance.get<TodoType>(`todos/${todoId}`)
-
 
 
 // import axios from 'axios'
@@ -4253,11 +4240,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //     }
 
 
-
-
-
-
-
 // import axios from 'axios'
 // import React, { useEffect, useState } from 'react'
 // import ReactDOM from 'react-dom/client';
@@ -4418,12 +4400,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // }
 
 
-
-
-
-
-
-
 // ___________________________________________________________________________________________________________________
 //                                                 ЧЕТВЕРГ ЭКЗАМЕН 2
 
@@ -4453,10 +4429,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Описание:
 // Вместо XXX и YYY через пробел напишите параметры которые приходят в санку.
 // Пример ответа: useCallback state                                                      ОТВЕТ: dispatch getState
-
-
-
-
 
 
 // import React, { useEffect } from 'react'
@@ -4591,10 +4563,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Пример ответа: type InitStateType = typeof initState                                       ОТВЕТ: dispatch(getPostsTC())
 
 
-
-
-
-
 // import React from 'react'
 // import ReactDOM from 'react-dom/client';
 // import {applyMiddleware, combineReducers, legacy_createStore as createStore} from 'redux'
@@ -4701,10 +4669,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Пример ответа: type InitStateType = typeof initState                                        ОТВЕТ: const store = createStore(rootReducer, applyMiddleware(thunk))
 
 
-
-
-
-
 // import React, { useEffect } from 'react'
 // import ReactDOM from 'react-dom/client';
 // import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux'
@@ -4802,13 +4766,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Пример ответа: type InitStateType = typeof initState
 
 // P.S. Эта ошибка из реальной жизни, студенты так часто ошибаются и не могут понять в чем дело.                ОТВЕT: dispatch(getPostsTC())
-
-
-
-
-
-
-
 
 
 // import React, { useEffect } from 'react'
@@ -4934,9 +4891,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Пример ответа: return instance.get<PostType[]>('posts?_limit=10')                                   ОТВЕТ:  dispatch(addPostTC())
 
 
-
-
-
 // import axios from 'axios'
 // import React, { useEffect } from 'react'
 // import ReactDOM from 'react-dom/client';
@@ -5033,9 +4987,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Пример ответа: unknown status isDone void                                                ОТВЕТ: void RootState unknown ActionsType
 
 
-
-
-
 // import axios from 'axios'
 // import React, { useEffect } from 'react'
 // import ReactDOM from 'react-dom/client';
@@ -5129,8 +5080,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Что нужно написать вместо any, any, any чтобы правильно типизировать dispatch ?
 // Ответ дайте через пробел
 // Пример ответа: unknown status isDone                                                ОТВЕT: RootState unknown ActionsType
-
-
 
 
 // import React, { useEffect } from 'react'
@@ -5268,9 +5217,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Пример ответа: const payload = {...currentPost, tile: 'Летим 🚀'}
 // Подсказка. Избавьтесь от всех any и решение придет само собой 😉
 
-                                                                          // ОТВЕТ: const currentPost = getState().posts.find((p: PostType) => p.id === postId)
-
-
+// ОТВЕТ: const currentPost = getState().posts.find((p: PostType) => p.id === postId)
 
 
 // import React, { useEffect } from 'react'
@@ -5830,8 +5777,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // 🖥 Пример ответа: const store = createStore(rootReducer, applyMiddleware(thunk))
 
 
-
-
 // import React, { useState } from 'react'
 // import ReactDOM from 'react-dom/client';
 // import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
@@ -5982,8 +5927,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // ❗ Типизировать ошибку не надо, т.к. там есть много нюансов, о которых вы узнаете позже
 
 
-
-
 // import React, { useEffect } from 'react'
 // import ReactDOM from 'react-dom/client';
 // import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux'
@@ -6091,7 +6034,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // В качестве ответа указать исправленную строку коду
 //
 // 🖥 Пример ответа: const store = createStore(rootReducer, applyMiddleware(thunk))
-
 
 
 // import React from 'react'
@@ -6450,7 +6392,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // 🖥 Пример ответа: dispatch(setLoadingAC(false))
 
 
-
 // import React, { useEffect } from 'react'
 // import ReactDOM from 'react-dom/client';
 // import { applyMiddleware, combineReducers, legacy_createStore as createStore, Dispatch } from 'redux'
@@ -6707,9 +6648,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // 🖥 Пример ответа: <Route path={'/'} component={<Main/>}/>        ОТВЕТ: root.render(<BrowserRouter><App/></BrowserRouter>)
 
 
-
-
-
 // import React from 'react'
 // import ReactDOM from 'react-dom/client';
 // import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -6743,7 +6681,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Исправленную версию строки напишите в качестве ответа.
 //                                                                                   Не ясна форма ответа
 // 🖥 Пример ответа: type InitStateType = typeof initState                           Ответ:   <Route path={'/'} element={<Main/>}/>
-
 
 
 //
@@ -6792,7 +6729,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // был адрес /profile
 
 // 🖥 Пример ответа: <Route path={'/'} element={'to profile page'}/>                   ОТВЕТ: <Route path={'*'} element={<Navigate to={'/profile'}/>}/>
-
 
 
 // import { useFormik } from 'formik';
@@ -6857,8 +6793,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // ❗После того как показался alert форма не должна перегружать все приложение
 
 // 🖥 Пример ответа: alert(JSON.stringify(values))                           ОТВЕТ:  <form onSubmit={formik.handleSubmit}>
-
-
 
 
 // import { useFormik } from 'formik';
@@ -6951,7 +6885,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // 🖥 Пример ответа: <form onSubmit={formik.handleSubmit}>                                 ОТВЕТ:   name="phone"
 
 
-
 // import { useFormik } from 'formik';
 // import React from 'react'
 // import ReactDOM from 'react-dom/client';
@@ -7011,8 +6944,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // В качестве ответа напишите полностью строку кода с условием.
 // 🖥 Пример ответа: return errors.firstName = 'Must be 5 characters or more'
 // ❗ Сторонние библиотеки (например yup) использовать запрещено   ОТВЕТ:  if (values.firstName.length < 5) {errors.firstName = 'Must be 5 characters or more'}
-
-
 
 
 // import { useFormik } from 'formik';
@@ -7089,7 +7020,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 
 // 🖥 Пример ответа: {true && <div style={{color: 'red'}}>error.email</div>}
 //                           ОТВЕТ:  {formik.touched.email && formik.errors.email && <div style={{color: 'red'}}>{formik.errors.email}</div>}
-
 
 
 // import { useFormik } from 'formik';
@@ -7258,8 +7188,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // 🖥 Пример ответа:  console.log('If login => redirect to profile')           ОТВЕТ: if (isLoggedIn) {navigate ('/profile') }
 
 
-
-
 // import React, { useEffect } from 'react'
 // import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 // import ReactDOM from 'react-dom/client';
@@ -7375,7 +7303,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Ответ дайте через пробел.
 
 // 🖥 Пример ответа: 1 2 3 4 5 6 7 8 9 1 2                    ОТВЕТ: 7 9 5 6 8 3 1 4 2 5 6
-
 
 
 // import React, { useEffect } from 'react'
@@ -7653,9 +7580,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // 🖥 Пример ответа: navigate('/profile')                       ОТВЕТ  onClick={() => { dispatch(loginTC(email,password))}}
 
 
-
-
-
 // import React, { useEffect } from 'react'
 // import ReactDOM from 'react-dom/client';
 // import {BrowserRouter, Route, Routes, useNavigate, useParams} from 'react-router-dom'
@@ -7700,7 +7624,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 
 //❗Ответ можно указывать с типизацией и без. Учтено несколько вариантов
 // 🖥 Пример ответа: const token = '123'                                              ОТВЕТ  const {token} = useParams()
-
 
 
 // import React, { useEffect } from 'react'
@@ -7906,7 +7829,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // 🖥 Пример ответа: balance = newSum                 ОТВЕТ          setBalance(balance + newSum)
 
 
-
 // import ReactDOM from 'react-dom/client';
 // import { BrowserRouter, Route, Routes, useNavigate, useParams } from 'react-router-dom'
 // import React from 'react'
@@ -8022,7 +7944,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // 🖥 Пример ответа: <Profile userId={4}/>
 
 
-
 // import ReactDOM from 'react-dom/client';
 // import React, { useEffect, useState } from 'react'
 //
@@ -8054,7 +7975,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // ❗В качестве переменной используйте значение prevState
 
 // 🖥 Пример ответа: btc = 1000000                                ОТВЕТ setBtc (btc + 1)
-
 
 
 // import React from 'react'
@@ -8091,7 +8011,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // 🖥 Пример ответа: 1                           ОТВЕТ 3
 
 
-
 // import React from 'react'
 // import ReactDOM from 'react-dom/client';
 //
@@ -8117,7 +8036,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 
 
 // import ReactDOM from 'react-dom/client';
-// import React, { useEffect } from 'react';
+// import React, {useEffect, useState} from 'react';
 // import { applyMiddleware, combineReducers, legacy_createStore as createStore } from 'redux'
 // import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk'
 // import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
@@ -8171,12 +8090,13 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //         .map((w: string, i: number) => <div key={i}>{w}</div>)
 //
 //     const onChangeHandler = (value: string) => {
-//         console.log(value)
+//
 //     }
 //
 //     return (
 //         <div>
 //             <input
+//
 //                 value={find}
 //                 onChange={e => onChangeHandler(e.target.value)}
 //             />
@@ -8199,6 +8119,8 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // В качестве ответа укажите исправленную версию строки.
 //
 // 🖥 Пример ответа: dispatch(setFind(defWords))
+
+
 
 
 
@@ -8256,7 +8178,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // type ActionsType = ReturnType<typeof setPageAC> | ReturnType<typeof setUsersAC>
 //
 // const getUsers = (): AppThunk => (dispatch, getState) => {
-//     const page = 1
+//     const page = getState().app.page
 //     api.getUsers(page)
 //         .then(res => dispatch(setUsersAC(res.data.items)))
 // }
@@ -8304,6 +8226,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // root.render(
 //     <Provider store={store}>
 //         <App/>
+//
 //     </Provider>
 // );
 
@@ -8313,7 +8236,9 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Однако в коде допущена ошибка и всегда подгружаются одни и теже пользователи.
 // Задача: найти эту ошибку, и исправленную версию строки написать в качестве ответа.
 
-// 🖥 Пример ответа: {pages.next()}
+// 🖥 Пример ответа: {pages.next()}                                           ОТВЕТ  const page = getState().app.page
+
+
 
 
 
@@ -8383,7 +8308,6 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //     const [name, setName] = useState('')
 //     const [timerId, setTimerId] = useState(0)
 //
-//
 //     useEffect(() => {
 //         setTimerId(+setTimeout(() => {
 //             dispatch(getFriends(name))
@@ -8426,6 +8350,8 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // для реализации данной задачи
 //
 // 🖥 Пример ответа: value={name(1500)}
+
+
 
 
 
@@ -8512,7 +8438,9 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // Найдите ошибку.
 // В качестве ответа укажите исправленную версию строки
 //
-// 🖥 Пример ответа: delete goodMorning                                   onClick={() => dispatch(deleteSome(p.id))}
+// 🖥 Пример ответа: delete goodMorning                               ОТВЕТ    onClick={() => dispatch(deleteSome(p.id))}
+
+
 
 
 
@@ -8616,7 +8544,8 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //     }, [activeColumn])
 //
 //     const sortHandler = (sortBy: string) => {
-//         dispatch(setActiveColumn((`0${ParamsType}`)))
+//           setActiveColumn(sortBy)
+//
 //         // ❗❗❗ XXX ❗❗❗
 //     };
 //
@@ -8674,6 +8603,10 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 
 
 
+
+
+
+
 // import axios from 'axios'
 // import React, { useEffect, useState } from 'react'
 // import ReactDOM from 'react-dom/client'
@@ -8689,7 +8622,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //
 // const api = {
 //     getUsers() {
-//         return instance.get('users?pageSize=3&pageNumber=2')
+//         return instance.get('users', {params: {pageSize:3,pageNumber:1}})
 //     },
 // }
 //
@@ -8733,8 +8666,7 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // В качестве ответа укажите полностью исправленную строку коду (переносы разрешены)
 
 
-// 🖥 Пример ответа: return instance.get('users=pageSize=3=pageNumber=2')
-
+// 🖥 Пример ответа: return instance.get('users=pageSize=3=pageNumber=2')            ОТВЕТ   return instance.get('users', {params: {pageSize:3,pageNumber:1}})
 
 
 // import React from 'react'
@@ -8768,32 +8700,32 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 // 🖥 Пример ответа: 1                                        ОТВЕТ 4
 
 
-import React from 'react'
-import ReactDOM from 'react-dom/client';
-
-export const App = () => {
-    return (
-        <div>
-            <h2>Какое из приведенных ниже определений верно?</h2>
-            <ol>
-                <li>1 - Команда git push используется для выгрузки содержимого локального репозитория в удаленный репозиторий.
-                    Она позволяет передать коммиты из локального репозитория в удаленный.
-                </li>
-                <li>2 - Команда git pull используется для извлечения и загрузки содержимого из удаленного репозитория и
-                    немедленного обновления локального репозитория этим содержимым.
-                </li>
-                <li>3 - Команда git fetch загружает коммиты, файлы и ссылки из удаленного репозитория в ваш локальный
-                    репозиторий. Извлеките данные с помощью команды fetch, если хотите увидеть, над чем работают остальные.
-                </li>
-                <li>4 - Ни одно из вышеперечисленных определений не верно</li>
-            </ol>
-        </div>
-    )
-}
-
-
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-root.render(<App/>);
+// import React from 'react'
+// import ReactDOM from 'react-dom/client';
+//
+// export const App = () => {
+//     return (
+//         <div>
+//             <h2>Какое из приведенных ниже определений верно?</h2>
+//             <ol>
+//                 <li>1 - Команда git push используется для выгрузки содержимого локального репозитория в удаленный репозиторий.
+//                     Она позволяет передать коммиты из локального репозитория в удаленный.
+//                 </li>
+//                 <li>2 - Команда git pull используется для извлечения и загрузки содержимого из удаленного репозитория и
+//                     немедленного обновления локального репозитория этим содержимым.
+//                 </li>
+//                 <li>3 - Команда git fetch загружает коммиты, файлы и ссылки из удаленного репозитория в ваш локальный
+//                     репозиторий. Извлеките данные с помощью команды fetch, если хотите увидеть, над чем работают остальные.
+//                 </li>
+//                 <li>4 - Ни одно из вышеперечисленных определений не верно</li>
+//             </ol>
+//         </div>
+//     )
+// }
+//
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<App/>);
 
 // 📜 Описание:
 // Какое из приведенных ниже определений верно?
@@ -8804,3 +8736,126 @@ root.render(<App/>);
 
 // 🖥 Пример ответа: 1                             ОТВЕТ 1 2 3
 
+
+
+
+
+// Что нужно написать вместо XXX, чтобы значение в поле ввода зачищалось?
+//     В качестве ответа укажите строчку целиком.
+
+
+// <input id="moldova" value="it-incubator"/>
+
+//     <script>
+// const inputElement = document.XXX('moldova');
+// inputElement.value = '';
+//
+// /* Что нужно написать вместо XXX, чтобы значение в поле ввода зачищалось?
+// В качестве ответа укажите строчку целиком.  */
+// </script>
+//
+
+
+// Что нужно написать внутри скобок вместо XXX, чтобы значение в поле ввода зачищалось?
+//
+//     copy
+//     <input id="brother" value="it-incubator"/>
+//
+//     <script>
+// const searchInputElement = document.querySelector(XXX);
+// searchInputElement.value = '';
+//
+// /*
+// Что нужно написать внутри скобок вместо XXX, чтобы значение в поле ввода зачищалось?
+// */
+// </script>
+
+
+// Что нужно написать внутри скобок вместо XXX и YYY, чтобы при нажатии на кнопку увидеть текст, введённый в input?
+//
+//     Ответ дайте через пробел.
+//
+//     Пример ответа: firstword secondword
+//
+// copy
+// <input id="search"/>
+//     <button id="find">find</button>
+//
+// <script>
+//     const searchInputElement = document.getElementById('search')
+//     const supersearchButtonElement = document.getElementById('find')
+//
+//     XXX.addEventListener(YYY, () => {
+//     console.log(searchInputElement.value)
+// })
+//
+//     {/*/**/}
+//     {/*Что нужно написать внутри скобок вместо XXX и YYY, чтобы при нажатии на кнопку увидеть текст, введённый в input?*/}
+//     {/*Ответ дайте через пробел.*/}
+//     {/*Пример ответа: firstword secondword*/}
+//     {/**/*/}
+//
+// </script>
+
+
+// Что нужно написать вместо XXX, чтобы в консоли увидеть возраст пользователя?
+//     let user = {
+//         name: "samurai",
+//         age: 18
+//     }
+// console.log(XXX)                         ОТВЕТ  user.age
+
+
+// Чему равно значение св-ва age объекта user?
+//     <script>
+//     let user = {age: 0};
+// for (let i = 0; i < 10; i++) {
+//     user.age = i;
+// }
+// </script>
+
+
+// Что нужно написать вместо XXX, чтобы добавить в массив значение 'react'?
+//     <script>
+//     let skills = ['css', 'html', 'js'];
+// skills.XXX('react');
+// </script>                                                          ОТВЕТ push
+
+
+// Сколько раз была вызывана функция yo?
+//     <script>
+//     let users = ['dimych', 'valera', 'artem', 'katya']
+//
+// yo();
+//
+// if (users.length > 4) {
+//     yo();
+// } else {
+//
+// }
+//
+// if (users.length < 2 || window !== null) {
+//     yo()
+// }
+//
+// for (let i=0;i<1;i++) {
+//     yo()
+// }
+//
+// function yo(){}
+//
+// </script>                                                        ОТВЕТ 3
+
+
+
+
+// Что минимальное забыли написать внутри функции removeWhitespaces, чтобы в консоли увидеть 'you_are_JS_developer' вместо undefined?
+//
+//     copy
+//     <script>
+//     function removeWhitespaces(string) {
+//         string.split(' ').filter(s => s !== '').join('_')
+//     }
+//
+//     console.log(removeWhitespaces('you are JS developer'))
+//     // </script>                                                            ОТВЕТ return
