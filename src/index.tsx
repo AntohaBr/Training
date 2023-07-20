@@ -8849,78 +8849,78 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //                                                         ПЯТНИЦА ЭКЗАМЕН 3
 
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {applyMiddleware, combineReducers, legacy_createStore as createStore} from 'redux'
-import thunk, {ThunkAction, ThunkDispatch} from 'redux-thunk'
-import {Provider, TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux'
-
-// Reducer
-const initState = {
-    animals: [
-        {likes: 0, name: 'cat'},
-        {likes: 0, name: 'dog'},
-        {likes: 0, name: 'fish'},
-        {likes: 0, name: 'spider'},
-        {likes: 0, name: 'bird'},
-    ] as { likes: number, name: string }[]
-}
-type InitStateType = typeof initState
-
-const appReducer = (state: InitStateType = initState, action: ActionsType): InitStateType => {
-    switch (action.type) {
-        case 'LIKE':
-            return {
-                ...state,
-                animals: state.animals.map((animal, index) => {
-                    return  animal == index  ? {...animal, likes:action.likes, name:action.name} : animal
-                })
-            }
-    }
-    return state
-}
-// tasks: [action.task, ...state.tasks.filter((t: any) => t.id !== action.task.id)]
-// Store
-const rootReducer = combineReducers({app: appReducer})
-
-const store = createStore(rootReducer, applyMiddleware(thunk))
-type RootState = ReturnType<typeof store.getState>
-type AppDispatch = ThunkDispatch<RootState, unknown, ActionsType>
-type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
-const useAppDispatch = () => useDispatch<AppDispatch>()
-const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
-
-const like = (likes: number, name: string) => ({type: 'LIKE', likes, name} as const)
-type ActionsType = ReturnType<typeof like>
-
-// Components
-export const Animals = () => {
-    const animals = useAppSelector(state => state.app.animals)
-    const dispatch = useAppDispatch()
-
-    const mapped = animals.map((a: any, i: number) => (
-        <div key={i}>
-            {a.name}
-            -{a.likes}-
-            <button onClick={() => dispatch(like(a.likes + 1, a.name))}>
-                Like!
-            </button>
-        </div>
-    ))
-
-    return (
-        <div>
-            {mapped}
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-root.render(
-    <Provider store={store}>
-        <Animals/>
-    </Provider>
-);
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+// import {applyMiddleware, combineReducers, legacy_createStore as createStore} from 'redux'
+// import thunk, {ThunkAction, ThunkDispatch} from 'redux-thunk'
+// import {Provider, TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux'
+//
+// // Reducer
+// const initState = {
+//     animals: [
+//         {likes: 0, name: 'cat'},
+//         {likes: 0, name: 'dog'},
+//         {likes: 0, name: 'fish'},
+//         {likes: 0, name: 'spider'},
+//         {likes: 0, name: 'bird'},
+//     ] as { likes: number, name: string }[]
+// }
+// type InitStateType = typeof initState
+//
+// const appReducer = (state: InitStateType = initState, action: ActionsType): InitStateType => {
+//     switch (action.type) {
+//         case 'LIKE':
+//             return {
+//                 ...state,
+//                 animals: state.animals.map((animal, index ) => {
+//                     return   action.likes.index === index  ? {...animal, likes:action.likes, name:action.name} : animal
+//                 })
+//             }
+//     }
+//     return state
+// }
+//
+// // Store
+// const rootReducer = combineReducers({app: appReducer})
+//
+// const store = createStore(rootReducer, applyMiddleware(thunk))
+// type RootState = ReturnType<typeof store.getState>
+// type AppDispatch = ThunkDispatch<RootState, unknown, ActionsType>
+// type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
+// const useAppDispatch = () => useDispatch<AppDispatch>()
+// const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+//
+// const like = (likes: number, name: string) => ({type: 'LIKE', likes, name} as const)
+// type ActionsType = ReturnType<typeof like>
+//
+// // Components
+// export const Animals = () => {
+//     const animals = useAppSelector(state => state.app.animals)
+//     const dispatch = useAppDispatch()
+//
+//     const mapped = animals.map((a: any, i: number) => (
+//         <div key={i}>
+//             {a.name}
+//             -{a.likes}-
+//             <button onClick={() => dispatch(like(a.likes + 1, a.name))}>
+//                 Like!
+//             </button>
+//         </div>
+//     ))
+//
+//     return (
+//         <div>
+//             {mapped}
+//         </div>
+//     )
+// }
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(
+//     <Provider store={store}>
+//         <Animals/>
+//     </Provider>
+// );
 
 // 📜 Описание:
 // На экране отображен список животных.
@@ -9114,14 +9114,16 @@ root.render(
 //
 // // Components
 // const Modal = (props: any) => {
+//
 //     const [value, setValue] = useState(props.task?.name || '')
-//     // console.log(props.task.name)
+//     console.log("value" + value)
 //     return (
 //
 //         <div style={modalContent}>
 //             modal:
 //             <input
 //                 value={value}
+//                 // autoComplete={'on'}
 //                 onChange={e => setValue(e.target.value)}
 //             />
 //             <button onClick={() => props.callback(value)}>{props.title}</button>
@@ -9143,6 +9145,7 @@ root.render(
 //                         setShow(false)
 //                     }}
 //                     title={'change'}
+//                     task={props.task}
 //                 />
 //             )}
 //         </div>
@@ -9198,7 +9201,7 @@ root.render(
 // В качестве ответа укажите строку кода, которую нужно изменить или добавить,
 // чтобы реализовать данную задачу
 //
-// 🖥 Пример ответа: defaultValue={value}
+// 🖥 Пример ответа: defaultValue={value}                                               ОТВЕТ: task={props.task}
 
 
 // import React from 'react';
@@ -9284,8 +9287,8 @@ root.render(
 // 📜 Описание:
 // Что нужно написать вместо XXX, чтобы вывелась сумма дохода в строке баланса
 //
-// 🖥 Пример ответа: console.log(work + donate)                                    ОТВЕТ:    dispatch(changeValue({balance: Number(work) + Number(donate)}))
-//или dispatch(changeValue({balance: work + donate}))
+// 🖥 Пример ответа: console.log(work + donate)                                    ОТВЕТ:    dispatch(changeValue({balance: work + donate}))
+
 
 
 // import ReactDOM from 'react-dom/client';
@@ -9421,7 +9424,7 @@ root.render(
 // В качестве укажите исправленную строку кода
 // ❗ Есть несколько вариантов решения данной задачи, в ответах учтены различные варианты
 
-// 🖥 Пример ответа: {users.map(u) => таблица отрисуйся ВЖУХ ВЖУХ}                             ОТВЕТ:   dispatch(getUsersTC())
+// 🖥 Пример ответа: {users.map(u) => таблица отрисуйся ВЖУХ ВЖУХ}                             ОТВЕТ:
 
 
 // import ReactDOM from 'react-dom/client';
