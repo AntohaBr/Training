@@ -624,7 +624,11 @@
 //         <main>
 //             <h4>User list:</h4>
 //             <ul>
-//                 { users.map(u => <User key={u.id} {...xxxxx} />) }
+//                 { users.map(u =>
+//                     <User
+//                         key={u.id}
+//                         {...u}
+//                     />) }
 //             </ul>
 //         </main>
 //     )
@@ -633,7 +637,7 @@
 // ReactDOM.render(
 //     <UsersList/>, document.getElementById('root')
 // );
-// Что надо написать вместо xxx, чтобы код работал?                                       ОТВЕТ:
+// Что надо написать вместо xxx, чтобы код работал?                                       ОТВЕТ: u
 
 
 //
@@ -1208,16 +1212,18 @@ ReactDOM.render(
 // Что надо написать вместо ххх,
 // чтобы после вывода текста в параграф содержимое формы ввода очищалось?    ОТВЕТ:  setUserName("")
 
-//
-// import React, {useState, MouseEvent, ChangeEvent} from 'react';
+
+// import React, {useState, ChangeEvent} from 'react';
 // import ReactDOM from 'react-dom';
 // import './index.css';
 //
 // function Notes() {
 //     const [newNote, setNewNote] = useState<string>("")
 //     const [notes, setNotes] = useState<Array<string>>([])
+//
 //     const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement> )=>
 //         setNewNote(e.currentTarget.value)
+//
 //     const addNote = () => {
 //         setNotes([newNote, ...notes])
 //         setNewNote("")
@@ -1227,7 +1233,7 @@ ReactDOM.render(
 //             <textarea
 //                 value={newNote}
 //                 onChange={onChangeHandler}
-//                 xxx = {addNote}    // onClick не правильно
+//                 onBlur = {addNote}
 //             />
 //             <h4>Notes:</h4>
 //             <div>
@@ -1242,7 +1248,7 @@ ReactDOM.render(
 //     <Notes/>, document.getElementById('root')
 // );
 // Что надо написать вместо ххх,
-// чтобы при потере инпутом фокуса добавлялась заметка?               ОТВЕТ:
+// чтобы при потере инпутом фокуса добавлялась заметка?               ОТВЕТ: onBlur
 
 
 //
@@ -10011,9 +10017,9 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 //     const sortBy = useAppSelector(state => state.app.params.sortBy)
 //     const sortDirection = useAppSelector(state => state.app.params.sortDirection)
 //
-//     const condition1 = '❗❗❗ XXX ❗❗❗'
-//     const condition2 = '❗❗❗ YYY ❗❗❗'
-//     const condition3 = '❗❗❗ ZZZ ❗❗❗'
+//     const condition1 = 'activeColumn'
+//     const condition2 = sortDirection
+//     const condition3 = sortBy
 //
 //     return (
 //         <th
@@ -10049,39 +10055,39 @@ const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGE
 
 
 
-import ReactDOM from 'react-dom/client';
-import React, { useState } from 'react'
-
-export const Jpegs = () => {
-    const [fileURL, setFileURL] = useState<any>()
-
-    const onChange = (e: any) => {
-        const maybeFile = e.target.files?.[0]
-        if (maybeFile) {
-            if (maybeFile.type === 'image/jpeg') {
-                setFileURL(URL.createObjectURL(maybeFile))
-                return
-            } else alert('not .jpg!')
-        }
-        setFileURL('')
-    }
-    console.log(fileURL)
-    return (
-        <div>
-            <input
-                type={'file'}
-                onChange={onChange}
-
-            />
-            {fileURL && (
-                <img src={fileURL} alt={'avatar'} />
-            )}
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-root.render(<Jpegs/>);
+// import ReactDOM from 'react-dom/client';
+// import React, { useState } from 'react'
+//
+// export const Jpegs = () => {
+//     const [fileURL, setFileURL] = useState<any>()
+//
+//     const onChange = (e: any) => {
+//         const maybeFile = e.target.files?.[0]
+//         if (maybeFile) {
+//             if (maybeFile.type === 'image/jpeg') {
+//                 setFileURL(URL.createObjectURL(maybeFile))
+//                 return
+//             } else alert('not .jpg!')
+//         }
+//         setFileURL('')
+//     }
+//     console.log(fileURL)
+//     return (
+//         <div>
+//             <input
+//                 type={'file'}
+//                 onChange={onChange}
+//
+//             />
+//             {fileURL && (
+//                 <img src={fileURL} alt={'avatar'} />
+//             )}
+//         </div>
+//     )
+// }
+//
+// const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// root.render(<Jpegs/>);
 
 // 📜 Описание:
 // Не отображается картинка при выборе.
